@@ -46,7 +46,7 @@ from google.genai.errors import APIError
 
 # ===== EDIT THESE FOR YOUR RUN =====
 DEFAULT_INPUT  = r"C:\Users\suraj\Downloads\My Python\Digii Other\Documentations"
-DEFAULT_OUTPUT = r"C:\Users\suraj\Downloads\My Python\Digii Other\ai_docs_out"
+DEFAULT_OUTPUT = r"C:\Users\suraj\Downloads\My Python\Digii Other\ai_docs_out\Mess Management"
 DEFAULT_MODULE = None   # e.g. "Staff Management", or leave as None
 # ====================================
 
