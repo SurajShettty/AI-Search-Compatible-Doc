@@ -10,14 +10,8 @@ Pipeline:
                                                               ->  rendered Markdown
 
 Usage:
-    # Single file
-    python doc_to_ai_search.py "path/to/Features and Functionalities.md" -o ai_docs_out
-
-    # Whole folder (recursively finds *.md)
-    python doc_to_ai_search.py "docs/" -o ai_docs_out
-
-    # Override module name (else inferred from filename / content)
-    python doc_to_ai_search.py "staff.md" -o out -m "Staff Management"
+    Edit INPUT_PATH / OUTPUT_DIR / MODULE_HINT below, then:
+        python doc_to_ai_search.py
 
 Requires:
     pip install anthropic
@@ -26,7 +20,6 @@ Requires:
 
 from __future__ import annotations
 
-import argparse
 import json
 import os
 import re
@@ -37,9 +30,15 @@ from typing import Any
 
 from anthropic import Anthropic, APIError
 
+# ----------------------------- config (edit here) -----------------------------
+
+INPUT_PATH = r"c:\Users\suraj\Downloads\My Python\Digii Other\Documentations"
+OUTPUT_DIR = r"c:\Users\suraj\Downloads\My Python\Digii Other\ai_docs_out"
+MODULE_HINT: str | None = None
+
 MODEL = "claude-sonnet-4-6"
 MAX_OUTPUT_TOKENS = 8192
-MAX_RETRIES = 3
+MAX_RETRIES = 2
 
 SYSTEM_PROMPT = """You are a documentation transformer for a RAG (retrieval-augmented generation) chatbot that answers user questions about the Digii campus-management platform (LMS / admin / HR / academics).
 
@@ -265,18 +264,12 @@ def process_one(src: Path, out_dir: Path, client: Anthropic, module_hint: str | 
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Convert Markdown docs to AI-search-ready JSON + cleaned MD.")
-    ap.add_argument("input", help="Markdown file or folder of .md files")
-    ap.add_argument("-o", "--out", default="ai_docs_out", help="Output folder")
-    ap.add_argument("-m", "--module", default=None, help="Optional module-name hint")
-    args = ap.parse_args()
-
     if not os.environ.get("ANTHROPIC_API_KEY"):
         print("ERROR: set ANTHROPIC_API_KEY first.", file=sys.stderr)
         return 1
 
-    in_path = Path(args.input)
-    out_dir = Path(args.out)
+    in_path = Path(INPUT_PATH)
+    out_dir = Path(OUTPUT_DIR)
     out_dir.mkdir(parents=True, exist_ok=True)
 
     client = Anthropic()
@@ -288,7 +281,7 @@ def main() -> int:
     print(f"Converting {len(files)} file(s) -> {out_dir}")
     for f in files:
         try:
-            process_one(f, out_dir, client, args.module)
+            process_one(f, out_dir, client, MODULE_HINT)
         except Exception as e:
             print(f"   FAILED: {e}", file=sys.stderr)
     return 0
