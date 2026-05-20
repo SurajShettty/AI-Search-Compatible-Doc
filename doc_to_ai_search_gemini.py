@@ -299,13 +299,24 @@ def gather_inputs(input_path: Path) -> list[Path]:
     raise FileNotFoundError(input_path)
 
 
+_ILLEGAL_FS_CHARS = re.compile(r'[<>:"/\\|?*\x00-\x1f]+')
+
+
+def _safe_filename_part(s: str) -> str:
+    s = _ILLEGAL_FS_CHARS.sub("_", s).strip(" .")
+    return re.sub(r"\s+", " ", s)
+
+
 def process_one(src: Path, out_dir: Path, client: genai.Client, module_hint: str | None) -> None:
     print(f"-> {src.name}")
     raw = clean_text(src.read_text(encoding="utf-8", errors="replace"))
     debug_dir = out_dir / "_debug"
     data = transform_with_gemini(client, raw, src.name, module_hint, debug_dir=debug_dir)
 
-    base = src.stem.replace(" ", "_")
+    module = (data.get("doc", {}).get("module") or module_hint or "").strip()
+    stem = src.stem  # keep spaces
+    base = f"{stem} - {_safe_filename_part(module)}" if module else stem
+
     json_path = out_dir / f"{base}.json"
     md_path = out_dir / f"{base}.md"
 
