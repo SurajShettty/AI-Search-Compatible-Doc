@@ -1,0 +1,571 @@
+{
+  "doc": {
+    "title": "FAQ",
+    "module": "Hostel Management",
+    "summary": "This document provides answers to frequently asked questions regarding hostel room allocation, payment processing, and policy management within the Digii campus-management platform.",
+    "prerequisites": [],
+    "tags": [
+      "FAQ",
+      "Hostel Management",
+      "Dues Management",
+      "Payment",
+      "Room Allocation",
+      "Policy Management"
+    ]
+  },
+  "chunks": [
+    {
+      "id": "track-student-payment-status",
+      "feature_name": "Student Payment Status Tracking",
+      "category": "Dues Management, Payments",
+      "what_it_does": "Describes how to track student payment statuses within the Digii platform, specifically noting it's available when Dues Management is enabled.",
+      "why_it_matters": "Provides financial transparency and helps administrators monitor student fee payments efficiently.",
+      "how_to_use": [
+        "Ensure 'Dues Management' payment mode is selected.",
+        "Access the platform's payment records section."
+      ],
+      "examples": [
+        "An administrator needs to see which students have outstanding hostel fees; they can check this via Dues Management."
+      ],
+      "keywords": [
+        "track payment status",
+        "student payments",
+        "Dues Management",
+        "payment records",
+        "financial tracking",
+        "student fees",
+        "payment visibility",
+        "monitor payments",
+        "check payment status",
+        "fees tracking",
+        "student finance",
+        "payment mode",
+        "payment status tracking",
+        "admin",
+        "administrator",
+        "finance admin",
+        "payment overview"
+      ],
+      "synonyms": [
+        "payment monitoring",
+        "fee tracking",
+        "student financial status"
+      ],
+      "user_questions": [
+        "How do I see all student payment statuses?",
+        "Can I track student fees?",
+        "Where can I find payment records?",
+        "What is Dues Management?",
+        "How does Dues Management help with payment tracking?"
+      ],
+      "related_features": [
+        "check-hostel-fee-payment-status"
+      ],
+      "tags": [
+        "Dues Management",
+        "Payments",
+        "Student Finance"
+      ]
+    },
+    {
+      "id": "offline-payment-room-allocation",
+      "feature_name": "Offline Payment Room Allocation",
+      "category": "Hostel Management, Payments",
+      "what_it_does": "Explains that when students choose offline payment, room allocation must be done manually by the administrator after external payment confirmation, as automatic allotment is not supported.",
+      "why_it_matters": "Clarifies the process for handling offline payments for hostel rooms, preventing confusion and ensuring rooms are assigned correctly.",
+      "how_to_use": [
+        "Confirm the student's offline payment externally.",
+        "Manually allocate the room to the student."
+      ],
+      "examples": [
+        "A student pays their hostel fees via bank transfer. The Hostel Administrator confirms the payment with the bank, then manually assigns a room in the system."
+      ],
+      "keywords": [
+        "offline payment",
+        "room allocation",
+        "manual allocation",
+        "Auto Allotment",
+        "hostel rooms",
+        "payment confirmation",
+        "external payment",
+        "allocate rooms manually",
+        "Hostel Administrator",
+        "student housing",
+        "room assignment",
+        "offline fee payment",
+        "manual room assignment",
+        "non-digital payment"
+      ],
+      "synonyms": [
+        "manual room assignment",
+        "offline fee processing",
+        "non-digital payment room assignment"
+      ],
+      "user_questions": [
+        "How to assign a room for offline payment?",
+        "Can I auto-allocate rooms for offline payments?",
+        "What's the process for offline payment room assignment?",
+        "Do I manually allocate rooms for offline payments?",
+        "Offline payment and room allotment, how does it work?"
+      ],
+      "related_features": [
+        "auto-allotment-offline-payment",
+        "make-hostel-fee-payment",
+        "delayed-room-allocation-no-dues-management"
+      ],
+      "tags": [
+        "Hostel Management",
+        "Payments",
+        "Room Allocation",
+        "Offline Payment"
+      ]
+    },
+    {
+      "id": "multiple-departments-hostel-policy",
+      "feature_name": "Multiple Department Selection for Hostel Policy",
+      "category": "Hostel Management, Policy Management",
+      "what_it_does": "Confirms that the Hostel Administrator can apply a single hostel policy to multiple departments by selecting them via checkboxes under Hostel Policy Options.",
+      "why_it_matters": "Allows for flexible and efficient policy application across different academic departments, streamlining hostel management.",
+      "how_to_use": [
+        "Navigate to 'Hostel Policy Options'.",
+        "Select multiple departments using the provided checkboxes."
+      ],
+      "examples": [
+        "The Hostel Administrator wants to apply a specific curfew policy to both the Engineering and Arts departments; they can select both departments under Hostel Policy Options."
+      ],
+      "keywords": [
+        "hostel policy",
+        "multiple departments",
+        "Hostel Administrator",
+        "policy options",
+        "select departments",
+        "checkboxes",
+        "hostel management",
+        "department selection",
+        "policy application",
+        "hostel rules",
+        "admin controls",
+        "multi-department policy"
+      ],
+      "synonyms": [
+        "multi-department policy",
+        "hostel policy configuration",
+        "departmental policy assignment"
+      ],
+      "user_questions": [
+        "Can I apply a hostel policy to more than one department?",
+        "How do I select multiple departments for a hostel policy?",
+        "Who can set hostel policies for multiple departments?",
+        "Where are hostel policy options?",
+        "Is it possible to link a hostel policy to several departments?"
+      ],
+      "related_features": [
+        "hostel-policy-institutional-alignment"
+      ],
+      "tags": [
+        "Hostel Management",
+        "Policy Management"
+      ]
+    },
+    {
+      "id": "hostel-policy-institutional-alignment",
+      "feature_name": "Hostel Policy for Institutional Alignment",
+      "category": "Hostel Management, Policy Management",
+      "what_it_does": "Explains that using Hostel Policy Options with criteria like gender, batch year, and department helps ensure room allocation adheres to institutional guidelines.",
+      "why_it_matters": "Guarantees fair and compliant room allocation, reducing manual errors and ensuring adherence to institutional rules.",
+      "how_to_use": [
+        "Configure 'Hostel Policy Options' with specific criteria such as gender, batch year, and department.",
+        "Ensure these policies are active during room allocation."
+      ],
+      "examples": [
+        "To ensure only female students are allocated to a specific wing, the Hostel Administrator sets a gender-based policy in Hostel Policy Options."
+      ],
+      "keywords": [
+        "hostel policy options",
+        "room allocation",
+        "institutional policies",
+        "gender criteria",
+        "batch year",
+        "department criteria",
+        "policy alignment",
+        "ensure compliance",
+        "hostel management",
+        "room assignment rules",
+        "policy enforcement",
+        "predefined criteria",
+        "institutional guidelines"
+      ],
+      "synonyms": [
+        "policy-driven room assignment",
+        "compliant room allocation",
+        "institutional policy adherence"
+      ],
+      "user_questions": [
+        "How do I make sure room allocation follows school rules?",
+        "What are Hostel Policy Options?",
+        "Can I set room allocation rules based on gender or batch?",
+        "How to align room allocation with institutional guidelines?",
+        "What criteria can be used in hostel policies?"
+      ],
+      "related_features": [
+        "multiple-departments-hostel-policy"
+      ],
+      "tags": [
+        "Hostel Management",
+        "Policy Management",
+        "Room Allocation"
+      ]
+    },
+    {
+      "id": "auto-allotment-offline-payment",
+      "feature_name": "Auto Allotment and Offline Payment Compatibility",
+      "category": "Hostel Management, Payments",
+      "what_it_does": "Clarifies that the automatic room allotment feature is not compatible with offline payment methods, requiring manual allocation after external payment verification.",
+      "why_it_matters": "Prevents users from expecting automatic allocation for offline payments and guides them towards the correct manual process.",
+      "how_to_use": [
+        "Confirm offline payment externally.",
+        "Manually allocate the room in the system."
+      ],
+      "examples": [
+        "A student pays their hostel fees in cash. The Hostel Administrator verifies the cash payment and then manually assigns a room, as auto-allotment won't trigger."
+      ],
+      "keywords": [
+        "Auto Allotment",
+        "offline payment",
+        "manual room allocation",
+        "payment confirmation",
+        "external payment",
+        "hostel management",
+        "room assignment",
+        "automatic allocation",
+        "offline fees",
+        "manual process",
+        "Hostel Administrator",
+        "auto-allotment compatibility"
+      ],
+      "synonyms": [
+        "offline payment auto-allocation",
+        "manual room assignment for offline payments"
+      ],
+      "user_questions": [
+        "Does auto allotment work with offline payments?",
+        "How to handle auto allotment for offline hostel fees?",
+        "Can I use auto allotment if a student pays offline?",
+        "What happens to auto allotment with offline payments?",
+        "Is auto room allocation available for offline payments?"
+      ],
+      "related_features": [
+        "offline-payment-room-allocation",
+        "automatic-room-allocation-dues-management",
+        "delayed-room-allocation-no-dues-management"
+      ],
+      "tags": [
+        "Hostel Management",
+        "Payments",
+        "Room Allocation",
+        "Offline Payment"
+      ]
+    },
+    {
+      "id": "check-hostel-fee-payment-status",
+      "feature_name": "Hostel Fee Payment Status Check",
+      "category": "Dues Management, Payments",
+      "what_it_does": "Instructs students on how to verify the processing status of their hostel fee payments by navigating to the Payments section under Dues Management.",
+      "why_it_matters": "Empowers students to independently track their payment status, reducing queries to administrators and providing peace of mind.",
+      "how_to_use": [
+        "Log in to the platform.",
+        "Go to the 'Payments' section.",
+        "Look under 'Dues Management' to view payment status."
+      ],
+      "examples": [
+        "A student wants to confirm their hostel fee payment went through. They log in, go to Payments, and check the Dues Management section."
+      ],
+      "keywords": [
+        "check payment status",
+        "hostel fee payment",
+        "Dues Management",
+        "payments section",
+        "payment processed",
+        "student payment status",
+        "verify payment",
+        "fee status",
+        "hostel fees",
+        "student portal",
+        "payment confirmation",
+        "check hostel fees"
+      ],
+      "synonyms": [
+        "hostel fee tracking",
+        "payment verification",
+        "check fee status"
+      ],
+      "user_questions": [
+        "How do I know if my hostel fees are paid?",
+        "Where can I check my hostel payment status?",
+        "Has my hostel fee payment gone through?",
+        "How to confirm hostel fee payment?",
+        "What is the Dues Management section for payments?"
+      ],
+      "related_features": [
+        "track-student-payment-status",
+        "make-hostel-fee-payment"
+      ],
+      "tags": [
+        "Dues Management",
+        "Payments",
+        "Student Experience",
+        "Hostel Management"
+      ]
+    },
+    {
+      "id": "room-change-request",
+      "feature_name": "Post-Allocation Room Change Request",
+      "category": "Hostel Management",
+      "what_it_does": "Outlines the process for students to request a room change after initial allocation, involving contacting the Hostel Administrator and adhering to availability and policies.",
+      "why_it_matters": "Provides a clear procedure for room changes, managing student expectations and ensuring changes are handled systematically.",
+      "how_to_use": [
+        "Contact the Hostel Administrator.",
+        "Inquire about room availability.",
+        "Submit a request for a room change."
+      ],
+      "examples": [
+        "A student wants to move to a different room due to a medical condition. They contact the Hostel Administrator to see if another room is available and submit their request."
+      ],
+      "keywords": [
+        "change room",
+        "room allocation",
+        "Hostel Administrator",
+        "room availability",
+        "request room change",
+        "institutional policies",
+        "post-allocation",
+        "student room change",
+        "hostel room swap",
+        "room transfer",
+        "hostel management",
+        "change allocated room"
+      ],
+      "synonyms": [
+        "room swap",
+        "room transfer request",
+        "change allocated room"
+      ],
+      "user_questions": [
+        "Can I change my hostel room after allocation?",
+        "Who do I contact to change my room?",
+        "How to request a room change?",
+        "What if I want a different room after allocation?",
+        "Is it possible to swap hostel rooms?"
+      ],
+      "related_features": [],
+      "tags": [
+        "Hostel Management",
+        "Student Experience"
+      ]
+    },
+    {
+      "id": "preferred-room-selection",
+      "feature_name": "Preferred Room Selection (with Dues Management)",
+      "category": "Hostel Management, Dues Management",
+      "what_it_does": "States that students can select their preferred room during the allocation process if the Dues Management system is active for payments.",
+      "why_it_matters": "Offers students a degree of choice in their accommodation, enhancing satisfaction, provided Dues Management is used.",
+      "how_to_use": [
+        "Ensure 'Dues Management' is the selected payment method.",
+        "During the room allocation process, choose your preferred room.",
+        "Proceed with payment."
+      ],
+      "examples": [
+        "A student wants a room on the top floor. If Dues Management is active, they can select that specific room during the application and payment process."
+      ],
+      "keywords": [
+        "select preferred room",
+        "Dues Management",
+        "room selection",
+        "hostel room choice",
+        "make payment",
+        "student choice",
+        "room preference",
+        "hostel management",
+        "room booking",
+        "choose room",
+        "select specific room"
+      ],
+      "synonyms": [
+        "choose my room",
+        "room preference selection",
+        "select specific room"
+      ],
+      "user_questions": [
+        "Can I pick my own hostel room?",
+        "How do I select a specific room?",
+        "Is preferred room selection available?",
+        "What is Dues Management for room selection?",
+        "Can I choose my room if I pay through Dues Management?"
+      ],
+      "related_features": [
+        "make-hostel-fee-payment",
+        "automatic-room-allocation-dues-management"
+      ],
+      "tags": [
+        "Hostel Management",
+        "Dues Management",
+        "Student Experience"
+      ]
+    },
+    {
+      "id": "make-hostel-fee-payment",
+      "feature_name": "Hostel Fee Payment Methods",
+      "category": "Dues Management, Payments",
+      "what_it_does": "Describes the two primary methods for paying hostel fees: via the Dues Management system on the platform or through institution-enabled offline payment options.",
+      "why_it_matters": "Provides clear instructions on how students can fulfill their financial obligations for hostel accommodation.",
+      "how_to_use": [
+        "Option 1: Access the 'Dues Management' section on the platform and follow the payment prompts.",
+        "Option 2: Utilize the 'Offline Payment' method as instructed by the institution (e.g., bank transfer, cash payment)."
+      ],
+      "examples": [
+        "A student can pay their hostel fees directly through the Digii portal using Dues Management, or they might be instructed to deposit cash at the administrative office for offline payment."
+      ],
+      "keywords": [
+        "make payment",
+        "hostel fees",
+        "Dues Management",
+        "Offline Payment",
+        "payment methods",
+        "pay hostel fees",
+        "institution enabled payment",
+        "online payment",
+        "cash payment",
+        "bank transfer",
+        "fee payment options",
+        "student finance",
+        "hostel fee payment process"
+      ],
+      "synonyms": [
+        "hostel fee payment options",
+        "how to pay hostel fees",
+        "hostel fee payment process"
+      ],
+      "user_questions": [
+        "What are the ways to pay hostel fees?",
+        "Can I pay my hostel fees online?",
+        "How do I pay for my hostel?",
+        "Is offline payment available for hostel fees?",
+        "Where can I make hostel fee payments?"
+      ],
+      "related_features": [
+        "check-hostel-fee-payment-status",
+        "offline-payment-room-allocation",
+        "preferred-room-selection",
+        "automatic-room-allocation-dues-management",
+        "delayed-room-allocation-no-dues-management"
+      ],
+      "tags": [
+        "Dues Management",
+        "Payments",
+        "Hostel Management"
+      ]
+    },
+    {
+      "id": "automatic-room-allocation-dues-management",
+      "feature_name": "Automatic Room Allocation via Dues Management",
+      "category": "Hostel Management, Dues Management",
+      "what_it_does": "Confirms that if Dues Management is used for payment, room allocation occurs automatically once the payment is successfully processed and cleared.",
+      "why_it_matters": "Assures students that their room will be secured promptly after payment when using the integrated Dues Management system.",
+      "how_to_use": [
+        "Ensure 'Dues Management' is selected for payment.",
+        "Complete the payment process through the platform.",
+        "Wait for payment clearance and automatic room allocation."
+      ],
+      "examples": [
+        "After a student pays their hostel fees using the Dues Management system, their room is automatically assigned to them without further action."
+      ],
+      "keywords": [
+        "automatic room allocation",
+        "Dues Management",
+        "payment cleared",
+        "room allotted automatically",
+        "hostel room assignment",
+        "auto allocation",
+        "payment processing",
+        "hostel management",
+        "student housing",
+        "room booking",
+        "payment confirmation",
+        "auto-assign room"
+      ],
+      "synonyms": [
+        "auto-assign room",
+        "room allocated automatically",
+        "instant room allocation"
+      ],
+      "user_questions": [
+        "Does my room get allocated automatically after payment?",
+        "When is my room automatically assigned?",
+        "What happens after I pay through Dues Management?",
+        "Is room allocation automatic with Dues Management?",
+        "Will my room be secured once I pay?"
+      ],
+      "related_features": [
+        "make-hostel-fee-payment",
+        "offline-payment-room-allocation",
+        "auto-allotment-offline-payment",
+        "delayed-room-allocation-no-dues-management"
+      ],
+      "tags": [
+        "Hostel Management",
+        "Dues Management",
+        "Room Allocation"
+      ]
+    },
+    {
+      "id": "delayed-room-allocation-no-dues-management",
+      "feature_name": "Delayed Room Allocation for Non-Dues Management Payments",
+      "category": "Hostel Management, Payments",
+      "what_it_does": "Explains that choosing payment methods other than Dues Management will result in a delay in room allocation until the payment is manually processed and confirmed.",
+      "why_it_matters": "Sets clear expectations for students regarding the timeline of room allocation based on their chosen payment method.",
+      "how_to_use": [
+        "Understand that if 'Dues Management' is not used, room allocation will not be immediate.",
+        "Ensure your payment is processed and confirmed externally to trigger manual allocation."
+      ],
+      "examples": [
+        "A student pays via an offline method. Their room won't be allocated until the administrative staff manually confirms the payment and updates the system, causing a delay."
+      ],
+      "keywords": [
+        "delayed room allocation",
+        "no Dues Management",
+        "payment processing delay",
+        "room assignment delay",
+        "offline payment impact",
+        "manual payment confirmation",
+        "hostel fees",
+        "room allocation timeline",
+        "payment confirmation",
+        "hostel management",
+        "room allocation delay"
+      ],
+      "synonyms": [
+        "room allocation delay",
+        "non-Dues Management payment impact",
+        "slow room assignment"
+      ],
+      "user_questions": [
+        "What if I don't pay hostel fees through Dues Management?",
+        "Will my room allocation be delayed if I pay offline?",
+        "How long does room allocation take without Dues Management?",
+        "What causes delays in room allocation?",
+        "Does not using Dues Management affect room assignment speed?"
+      ],
+      "related_features": [
+        "make-hostel-fee-payment",
+        "automatic-room-allocation-dues-management",
+        "offline-payment-room-allocation",
+        "auto-allotment-offline-payment"
+      ],
+      "tags": [
+        "Hostel Management",
+        "Payments",
+        "Room Allocation"
+      ]
+    }
+  ]
+}

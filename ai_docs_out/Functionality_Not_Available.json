@@ -1,0 +1,342 @@
+{
+  "doc": {
+    "title": "Functionality Not Available",
+    "module": "Hostel Management",
+    "summary": "This document outlines current features and functionalities that are not available or possible within the Hostel Management Configuration in the Digii campus-management platform.",
+    "prerequisites": [],
+    "tags": [
+      "hostel management",
+      "limitations",
+      "unavailable features",
+      "restrictions",
+      "hostel policies",
+      "room management"
+    ]
+  },
+  "chunks": [
+    {
+      "id": "editing-archiving-deleting-hostel-policies",
+      "feature_name": "Hostel Policy Immutability",
+      "category": "Hostel Policies",
+      "what_it_does": "Once a hostel policy is created in the Digii campus-management platform, it cannot be edited, archived, or deleted.",
+      "why_it_matters": "This limitation reduces flexibility, requiring the creation of an entirely new policy for any necessary adjustments, which can be inefficient and increase administrative overhead.",
+      "how_to_use": [
+        "To make changes to an existing hostel policy, create a new policy with the desired adjustments."
+      ],
+      "examples": [
+        "An institution needs to update the terms of a hostel policy. Instead of editing the existing one, they must create a completely new policy.",
+        "A policy is no longer relevant but cannot be archived or deleted, remaining visible in the system."
+      ],
+      "keywords": [
+        "hostel policy",
+        "edit hostel policy",
+        "archive hostel policy",
+        "delete hostel policy",
+        "modify hostel policy",
+        "policy changes",
+        "hostel management",
+        "policy limitations",
+        "policy restrictions",
+        "immutability",
+        "hostel admin",
+        "hostel administrator",
+        "policy creation",
+        "new policy",
+        "update policy",
+        "remove policy"
+      ],
+      "synonyms": [
+        "hostel rule",
+        "dorm policy",
+        "residence policy",
+        "policy modification",
+        "policy removal"
+      ],
+      "user_questions": [
+        "Can I edit a hostel policy after it's created?",
+        "How do I delete an old hostel policy?",
+        "Is it possible to archive a hostel policy?",
+        "What if I need to change a hostel policy?",
+        "Why can't I modify hostel policies?",
+        "How to update hostel policy terms?"
+      ],
+      "related_features": [
+        "multiple-active-policies",
+        "editing-hostel-policy-options"
+      ],
+      "tags": [
+        "hostel policies",
+        "limitations",
+        "policy management"
+      ]
+    },
+    {
+      "id": "multiple-active-policies",
+      "feature_name": "Single Active Hostel Policy Restriction",
+      "category": "Hostel Policies",
+      "what_it_does": "The Digii campus-management platform only allows one hostel policy to be active at any given time.",
+      "why_it_matters": "This prevents institutions from simultaneously managing different policies for various departments or student groups, limiting flexibility in complex hostel management scenarios.",
+      "how_to_use": [],
+      "examples": [
+        "An institution wants to have one policy for undergraduate students and another for postgraduate students, but the system only allows one to be active.",
+        "Different hostel blocks have different rules, but only one set of rules can be enforced at a time."
+      ],
+      "keywords": [
+        "multiple policies",
+        "active policies",
+        "hostel policy",
+        "simultaneous policies",
+        "different policies",
+        "student groups",
+        "departments",
+        "hostel management",
+        "policy limitations",
+        "policy restrictions",
+        "single policy",
+        "active policy",
+        "hostel admin",
+        "hostel administrator",
+        "concurrent policies"
+      ],
+      "synonyms": [
+        "concurrent policies",
+        "multiple rules",
+        "simultaneous rules",
+        "more than one policy"
+      ],
+      "user_questions": [
+        "Can I have more than one active hostel policy?",
+        "How do I run different hostel policies for different student groups?",
+        "Is it possible to activate multiple hostel policies?",
+        "Why can't I have two active hostel policies?",
+        "What if I need separate policies for different departments?"
+      ],
+      "related_features": [
+        "editing-archiving-deleting-hostel-policies",
+        "editing-hostel-policy-options"
+      ],
+      "tags": [
+        "hostel policies",
+        "limitations",
+        "policy management"
+      ]
+    },
+    {
+      "id": "editing-hostel-policy-options",
+      "feature_name": "Hostel Policy Option Immutability",
+      "category": "Hostel Policies",
+      "what_it_does": "Once a hostel policy option is created and activated in the Digii campus-management platform, it cannot be modified.",
+      "why_it_matters": "Any required changes to fees, dates, or other options necessitate creating an entirely new policy, significantly increasing the administrative workload for Hostel Administrators.",
+      "how_to_use": [
+        "To change an activated hostel policy option, a new hostel policy must be created with the updated options."
+      ],
+      "examples": [
+        "A hostel needs to adjust the fee for a specific room type within an active policy option. They cannot edit the existing option and must create a new policy.",
+        "The end date for a policy option needs to be extended, but it cannot be modified directly."
+      ],
+      "keywords": [
+        "hostel policy option",
+        "edit policy option",
+        "modify policy option",
+        "change policy option",
+        "policy option fees",
+        "policy option dates",
+        "policy option changes",
+        "hostel management",
+        "policy limitations",
+        "policy restrictions",
+        "immutability",
+        "hostel admin",
+        "hostel administrator",
+        "administrative workload",
+        "new policy",
+        "update policy option",
+        "edit fees",
+        "change dates"
+      ],
+      "synonyms": [
+        "dorm policy option",
+        "residence policy option",
+        "option modification",
+        "option editing"
+      ],
+      "user_questions": [
+        "Can I edit a hostel policy option after it's active?",
+        "How do I change fees in a hostel policy option?",
+        "Is it possible to modify the dates of a policy option?",
+        "What happens if I need to update an activated policy option?",
+        "Why can't I edit hostel policy options?"
+      ],
+      "related_features": [
+        "editing-archiving-deleting-hostel-policies",
+        "multiple-active-policies",
+        "automatic-policy-option-end-functionality"
+      ],
+      "tags": [
+        "hostel policies",
+        "limitations",
+        "policy management"
+      ]
+    },
+    {
+      "id": "automatic-policy-option-end-functionality",
+      "feature_name": "Manual Room Allotment Cancellation",
+      "category": "Room Allotment",
+      "what_it_does": "Even when a Policy Option End Date is set, the Digii campus-management platform does not automatically cancel room allotments after the policy concludes.",
+      "why_it_matters": "Hostel Administrators must manually cancel room allocations, leading to increased administrative effort and potential oversight if not managed diligently.",
+      "how_to_use": [
+        "Hostel Administrators must manually cancel room allotments after a policy option's end date has passed."
+      ],
+      "examples": [
+        "A policy option for a summer semester ends on August 31st. On September 1st, the system does not automatically free up the rooms; a Hostel Administrator must manually cancel each allotment.",
+        "Students remain allotted to rooms past their policy end date until a Hostel Administrator intervenes."
+      ],
+      "keywords": [
+        "automatic cancellation",
+        "policy option end date",
+        "room allotment",
+        "cancel room allotment",
+        "manual cancellation",
+        "hostel admin",
+        "hostel administrator",
+        "administrative effort",
+        "room allocation",
+        "hostel management",
+        "policy end",
+        "end date",
+        "room release",
+        "auto cancel",
+        "room deallocation",
+        "room de-allotment"
+      ],
+      "synonyms": [
+        "auto-cancel rooms",
+        "room de-allotment",
+        "policy expiry",
+        "automatic room release",
+        "manual room release"
+      ],
+      "user_questions": [
+        "Does the system automatically cancel room allotments when a policy ends?",
+        "How do I cancel room allotments after a policy option end date?",
+        "What happens when a policy option end date is reached?",
+        "Why aren't room allotments automatically cancelled?",
+        "Do I need to manually cancel room allocations?"
+      ],
+      "related_features": [
+        "editing-hostel-policy-options"
+      ],
+      "tags": [
+        "room allotment",
+        "automation",
+        "limitations",
+        "hostel management"
+      ]
+    },
+    {
+      "id": "modifying-room-capacity-after-allocation",
+      "feature_name": "Room Capacity Immutability After Allotment",
+      "category": "Infrastructure Management",
+      "what_it_does": "Once rooms are allotted, their capacity cannot be changed in the Infrastructure Module of the Digii campus-management platform.",
+      "why_it_matters": "This restricts flexibility in managing room allocation adjustments, even if there's a legitimate need to change capacity after initial assignments, potentially leading to inefficient space utilization.",
+      "how_to_use": [],
+      "examples": [
+        "A room initially allotted as a double needs to be converted to a single after students have moved in. The capacity cannot be updated in the system.",
+        "Due to unforeseen circumstances, a room's capacity needs to be reduced, but the system prevents this change once it's allotted."
+      ],
+      "keywords": [
+        "room capacity",
+        "modify room capacity",
+        "change room capacity",
+        "room allotment",
+        "infrastructure module",
+        "hostel management",
+        "room allocation",
+        "capacity adjustment",
+        "flexibility",
+        "limitations",
+        "hostel admin",
+        "hostel administrator",
+        "room size",
+        "room type",
+        "edit room capacity",
+        "post-allotment capacity"
+      ],
+      "synonyms": [
+        "dorm capacity",
+        "residence capacity",
+        "room size modification",
+        "post-allotment capacity",
+        "change room size"
+      ],
+      "user_questions": [
+        "Can I change room capacity after rooms are allotted?",
+        "How do I modify room capacity in the Infrastructure Module once rooms are assigned?",
+        "What if I need to adjust room capacity after allocation?",
+        "Why can't I change room capacity after students are allotted?",
+        "Is it possible to edit room capacity post-allotment?"
+      ],
+      "related_features": [],
+      "tags": [
+        "infrastructure",
+        "room management",
+        "limitations",
+        "hostel management"
+      ]
+    },
+    {
+      "id": "bulk-upload-hostel-policy-option-entries",
+      "feature_name": "Individual Hostel Policy Option Entry",
+      "category": "Hostel Policies",
+      "what_it_does": "The Digii campus-management platform requires Hostel Policy Options to be added individually, without a bulk upload functionality.",
+      "why_it_matters": "This significantly increases the workload for the Hostel Administrator when a large number of policy options need to be configured, making the process time-consuming and prone to manual errors.",
+      "how_to_use": [
+        "Add each Hostel Policy Option individually through the user interface."
+      ],
+      "examples": [
+        "An institution has 100 different room types and fee structures, each requiring a separate policy option. The Hostel Administrator must enter each one manually.",
+        "During a new academic year setup, many policy options need to be created, but there's no option to upload them via a spreadsheet."
+      ],
+      "keywords": [
+        "bulk upload",
+        "hostel policy option",
+        "individual entry",
+        "manual entry",
+        "hostel administrator",
+        "workload",
+        "policy configuration",
+        "hostel management",
+        "data entry",
+        "upload options",
+        "mass upload",
+        "import policy options",
+        "policy option entries",
+        "add policy options",
+        "batch entry"
+      ],
+      "synonyms": [
+        "mass entry",
+        "batch upload",
+        "import options",
+        "bulk add policy options",
+        "upload policy options"
+      ],
+      "user_questions": [
+        "Can I bulk upload hostel policy options?",
+        "How do I add many hostel policy options at once?",
+        "Is there a way to import hostel policy options?",
+        "Why can't I use bulk upload for hostel policy options?",
+        "What is the process for adding multiple hostel policy options?"
+      ],
+      "related_features": [
+        "editing-hostel-policy-options"
+      ],
+      "tags": [
+        "hostel policies",
+        "bulk operations",
+        "limitations",
+        "hostel management"
+      ]
+    }
+  ]
+}
