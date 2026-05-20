@@ -1,0 +1,146 @@
+# Template and Examples
+
+**Module:** Infrastructure Management  
+**Tags:** infrastructure, management, admin, facilities, venue booking
+
+
+## Overview
+
+This document outlines how to manage infrastructure within the Digii platform, covering the creation and categorization of infrastructure types, adding specific infrastructure records, and archiving existing infrastructure for temporary deactivation.
+
+## Add Infrastructure Type
+
+<!-- id: add-infrastructure-type | category: Infrastructure Types Configuration -->
+
+**What it does**
+
+The Add New Infrastructure Type feature allows administrators to define and categorize different types of infrastructure available within the institution, such as classrooms, laboratories, hostels, auditoriums, or sports complexes.
+
+**Why it matters**
+
+By creating new infrastructure types, the system enables structured data management, helps categorize resources for easy tracking, reporting, and utilization planning, and facilitates easier search and selection of venues within the 'Book a Venue' module.
+
+**How to use**
+
+1. Step 1 - Navigate to Infrastructure Management from Admin Console
+2. Step 2 - Click on Settings Icon
+3. Step 3 - Select 'New Infrastructure Type' to create new type
+4. Step 4 - Enter Type Name and click on 'Create' new infrastructure type.
+5. Step 5 - Select Infrastructure Type to edit name, add attribute group or delete created type.
+6. Step 6 - Configure the Booking Rules for the Infrastructure Type
+
+**Examples**
+
+- Defining 'Classroom' as an infrastructure type.
+- Creating 'Laboratory' as a new infrastructure category.
+- Adding 'Auditorium' and 'Sports Complex' as distinct infrastructure types.
+
+**Questions this answers**
+
+- How do I add a new type of infrastructure?
+- Where can I define different facility categories?
+- Can I create a new classroom type?
+- How do I configure booking rules for an infrastructure type?
+- What are infrastructure types used for?
+- How to edit or delete an infrastructure type?
+- What is the process to add a new venue type?
+
+**Keywords:** add infrastructure type, create infrastructure type, define infrastructure type, categorize infrastructure, infrastructure categories, facility types, venue types, classroom type, laboratory type, hostel type, auditorium type, sports complex type, physical infrastructure types, resource management, utilization planning, venue booking module, admin console, infrastructure management settings, configure booking rules, edit infrastructure type, delete infrastructure type, attribute group, settings icon, new type
+
+**Synonyms:** create facility category, define venue type, add building type
+
+**Related:** add-new-infrastructure
+
+**Tags:** infrastructure, settings, configuration, venue booking, resource management
+
+---
+
+## Add New Infrastructure
+
+<!-- id: add-new-infrastructure | category: Infrastructure Records Management -->
+
+**What it does**
+
+The Add New Infrastructure feature allows administrators to create a new infrastructure record under a specific Infrastructure Type, maintaining a detailed digital record of all physical infrastructures.
+
+**Why it matters**
+
+This feature helps institutions keep a comprehensive digital inventory of assets like buildings, classrooms, laboratories, hostels, offices, sports facilities, and common areas, facilitating better management and tracking.
+
+**How to use**
+
+1. Step 1 - Navigate to Infrastructure Management from Admin Console
+2. Step 2 - Select 'Add New infrastructure'
+3. Step 3 - Select Infrastructure Type from available options
+4. Step 4 - Fill all required details based on infrastructure to be created and click on 'Add Infrastructure'.
+5. NOTE: Only Infrastructure Type, Name, and Code are mandatory fields. The remaining fields are optional and can be used based on the nature and use case of the infrastructure being created.
+6. NOTE: Enable 'Can be booked' if the infrastructure should be available for booking from Venue Booking module.
+
+**Examples**
+
+- Adding 'Room 101' under the 'Classroom' infrastructure type.
+- Creating a record for 'Main Auditorium' and making it bookable.
+- Registering 'Science Lab A' with its specific code and details.
+
+**Questions this answers**
+
+- How do I add a new classroom to the system?
+- What information is required when adding new infrastructure?
+- Can I make a newly added infrastructure available for booking?
+- How to create a record for a new building?
+- What are the mandatory fields for adding infrastructure?
+- Where do I select the infrastructure type when adding a new one?
+
+**Keywords:** add new infrastructure, create infrastructure record, register infrastructure, add facility, new building, new classroom, new laboratory, new hostel, new office, new sports facility, new common area, physical infrastructure, infrastructure type selection, mandatory fields, optional fields, can be booked, venue booking module, admin console, infrastructure management, infrastructure name, infrastructure code
+
+**Synonyms:** create facility record, register venue, add physical asset
+
+**Related:** add-infrastructure-type, archive-infrastructure
+
+**Tags:** infrastructure, record management, facility management, venue booking, creation
+
+---
+
+## Archive Infrastructure
+
+<!-- id: archive-infrastructure | category: Infrastructure Management -->
+
+**What it does**
+
+The Archive Infrastructure feature allows administrators to deactivate or temporarily remove an existing infrastructure record from active use without permanently deleting it.
+
+**Why it matters**
+
+This feature is crucial for retaining data for reference, audit, or historical reporting when an infrastructure (like a classroom, hostel, lab, or office space) is under renovation, repurposed, or no longer in use, preventing permanent data loss.
+
+**How to use**
+
+1. Step 1 - Navigate to Infrastructure Management from Admin Console
+2. Step 2 - Click on the ellipsis (three horizontal dots to open the action menu) of desired infrastructure.
+3. Step 3 - Click on Archive / Unarchive to take desired action
+
+**Examples**
+
+- Archiving 'Room 205' because it's undergoing renovation.
+- Deactivating 'Old Computer Lab' as it's no longer in use but its historical data needs to be kept.
+- Unarchiving a classroom that has completed its renovation and is ready for use again.
+
+**Questions this answers**
+
+- How do I temporarily remove an infrastructure from active use?
+- Can I archive a classroom that is under renovation?
+- What is the difference between archiving and deleting infrastructure?
+- How do I unarchive an infrastructure?
+- Why would I archive an infrastructure?
+- Where can I find the option to archive a facility?
+- How to deactivate an old lab?
+
+**Keywords:** archive infrastructure, unarchive infrastructure, deactivate infrastructure, temporarily remove infrastructure, remove infrastructure, suspend infrastructure, restore infrastructure, reactivate infrastructure, retain data, audit trail, historical reporting, infrastructure record, classroom, hostel, lab, office space, admin console, infrastructure management, ellipsis menu, action menu, data retention, facility deactivation
+
+**Synonyms:** deactivate facility, hide venue, restore facility, suspend asset
+
+**Related:** add-infrastructure-type, add-new-infrastructure
+
+**Tags:** infrastructure, data retention, deactivation, auditing, management
+
+---

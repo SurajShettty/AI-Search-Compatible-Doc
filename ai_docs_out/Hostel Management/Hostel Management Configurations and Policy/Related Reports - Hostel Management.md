@@ -1,0 +1,104 @@
+# Related Reports
+
+**Module:** Hostel Management  
+**Tags:** reports, analytics, hostel management, fee management, occupancy, student fees
+
+
+## Overview
+
+This document outlines key reports available within the Digii campus Analytics module, specifically focusing on hostel fee policy options and their associated student assignments, payment statuses, and occupancy summaries.
+
+## Prerequisites
+
+- **Embedded Analytics Admin** — Required to access the Analytics module and its various reports.
+- **Hostel Management Dashboard privilege** — A specific privilege under Analytics that grants access to hostel-related data and reports.
+
+## User Wise Fee Policy Option Report
+
+<!-- id: user-wise-fee-policy-option-report | category: Hostel Fee Policy Reports -->
+
+**What it does**
+
+This report, found in the Analytics module under the Hostel section, provides a detailed, student-level view of hostel fee policy assignments and their payment status. It combines academic, contact, and hostel allotment details with specific fee policy options, including policy code, option name, allotment period, and current status. If hostel fees are collected on the Digii campus platform, it also captures a complete fee breakup, including amounts paid, penalties, waivers, and pending balances. The data is refreshed every three hours, and there is no limitation on the number of records that can be downloaded.
+
+**Why it matters**
+
+This report is crucial for administrators to monitor individual student fee obligations, track payment progress, and identify any outstanding amounts or policy discrepancies. It ensures transparency in fee collection and helps in managing hostel finances effectively by providing a comprehensive financial overview per student, enabling timely follow-ups and accurate record-keeping.
+
+**How to use**
+
+1. 1. Navigate to the Analytics module.
+2. 2. Go to the Hostel section.
+3. 3. Select the Fee Policy tab.
+4. 4. Locate and open the 'User Wise Fee Policy Option Report'.
+
+**Examples**
+
+- An administrator needs to quickly identify all students in the 'Engineering' department who have a pending balance for the 'Hostel Type A - Single Room' fee policy option for the current academic year.
+- A finance officer wants to review the complete fee breakup, including any penalties or waivers, for a specific student's hostel fees to resolve a payment query.
+
+**Questions this answers**
+
+- Where can I find the User Wise Fee Policy Option Report?
+- What information does the User Wise Fee Policy Option Report provide?
+- How often is the hostel fee policy report updated?
+- Can I see individual student hostel fee payment status?
+- Does this report show pending hostel fees?
+- What details are included about hostel allotment?
+- Who can access the User Wise Fee Policy Option Report?
+- Is there a limit to downloading records from this report?
+- How do I check a student's hostel fee breakup?
+- Can I view penalties and waivers applied to hostel fees?
+
+**Keywords:** user wise fee policy option report, hostel fee report, student fee policy, fee assignment, payment status, pending fees, hostel allotment, fee breakup, penalty, waiver, analytics module, hostel management dashboard, download report, real-time data, student records, fee collection, hostel fees, policy code, option name, allotment period, current status, department, programme, contact details, building name, floor number, room number, admin privilege, report download limit, data refresh frequency, individual student fees, fee policy options, hostel fee tracking, student hostel fees, fee policy status, hostel fee payment, hostel fee collection, hostel fee management, hostel fee policy assignment, hostel fee policy status, hostel fee policy payment, hostel fee policy pending, hostel fee policy waiver, hostel fee policy penalty, hostel fee policy amount, hostel fee policy total payable, hostel fee policy paid amount, hostel fee policy pending amount to be paid, hostel fee policy option assignment, hostel fee policy option payment status, hostel fee policy option details, hostel fee policy option report download, hostel fee policy option report analytics, hostel fee policy option report hostel management, hostel fee policy option report admin privilege, hostel fee policy option report refresh frequency, hostel fee policy option report limitation, hostel fee policy option report student level view, hostel fee policy option report academic details, hostel fee policy option report contact details, hostel fee policy option report hostel allotment information, hostel fee policy option report specific fee policy option selected, hostel fee policy option report policy code, hostel fee policy option report option name, hostel fee policy option report allotment period, hostel fee policy option report current status, hostel fee policy option report fee breakup, hostel fee policy option report hostel fee amount, hostel fee policy option report penalty levied, hostel fee policy option report waivers granted, hostel fee policy option report total payable amount, hostel fee policy option report amount paid, hostel fee policy option report pending amount to be paid
+
+**Synonyms:** student fee policy report, individual hostel fee report, hostel fee status report, student hostel payment report
+
+**Tags:** hostel, fees, reports, analytics, student, payment, finance
+
+---
+
+## Fee Policy Option Summary Report
+
+<!-- id: fee-policy-option-summary-report | category: Hostel Fee Policy Reports -->
+
+**What it does**
+
+This report, located in the Analytics module under the Hostel section, provides an aggregated view of hostel fee policy options, detailing policy names, option specifics (name, code, amount), room types, and gender mappings. It also includes hostel occupancy numbers, such as total, occupied, and available rooms, mapped to respective hostels and their allotment periods. The data is refreshed every three hours, and there is no limitation on the number of records that can be downloaded.
+
+**Why it matters**
+
+This summary report enables administrators to evaluate the performance of each fee policy option in terms of occupancy and utilization, helping to identify options with high availability or over-utilization. It is essential for ensuring that fee policy configurations are accurately aligned with actual hostel capacity and allotment status across the institution, supporting strategic planning and resource allocation for hostel resources.
+
+**How to use**
+
+1. 1. Navigate to the Analytics module.
+2. 2. Go to the Hostel section.
+3. 3. Select the Fee Policy tab.
+4. 4. Locate and open the 'Fee Policy Option Summary Report'.
+
+**Examples**
+
+- A hostel manager wants to see which fee policy options for 'Female - Double Room' are currently underutilized across all hostels to consider promotional offers or policy adjustments.
+- An administrator needs to quickly assess the total available capacity for 'Hostel B' and how it aligns with the configured fee policy options for the upcoming semester to plan admissions.
+
+**Questions this answers**
+
+- What does the Fee Policy Option Summary Report show?
+- How can I check hostel occupancy rates?
+- Where is the Fee Policy Option Summary Report located?
+- How often is the Fee Policy Option Summary Report updated?
+- Can I see which fee options are underutilized?
+- What details are included about room types and gender mapping?
+- Who can access the Fee Policy Option Summary Report?
+- Is there a limit to downloading records from this report?
+- How do I assess hostel capacity utilization?
+- Can I see available rooms per hostel and fee policy?
+
+**Keywords:** fee policy option summary report, hostel occupancy report, policy performance, room type, gender mapping, total occupancy, occupied rooms, available rooms, hostel capacity, allotment status, analytics module, hostel management dashboard, download report, real-time data, policy name, option details, option code, option amount, hostel mapping, allotment period, admin privilege, report download limit, data refresh frequency, occupancy assessment, policy configuration, hostel utilization, hostel availability, hostel occupancy numbers, hostel occupancy rates, hostel occupancy status, hostel occupancy tracking, hostel occupancy management, hostel occupancy report download, hostel occupancy report analytics, hostel occupancy report hostel management, hostel occupancy report admin privilege, hostel occupancy report refresh frequency, hostel occupancy report limitation, hostel occupancy report policy name, hostel occupancy report option details, hostel occupancy report option name, hostel occupancy report option code, hostel occupancy report option amount, hostel occupancy report room type, hostel occupancy report gender mapped, hostel occupancy report total occupancy, hostel occupancy report occupied rooms, hostel occupancy report available rooms, hostel occupancy report respective hostels, hostel occupancy report allotment period, hostel occupancy report assess policy performance, hostel occupancy report identify options with high availability, hostel occupancy report identify options with over utilization, hostel occupancy report ensure policy configurations are correctly aligned, hostel occupancy report actual hostel capacity, hostel occupancy report allotment status across institution
+
+**Synonyms:** hostel fee summary, occupancy report, fee option performance report, hostel capacity report
+
+**Tags:** hostel, fees, reports, analytics, occupancy, capacity, planning
+
+---

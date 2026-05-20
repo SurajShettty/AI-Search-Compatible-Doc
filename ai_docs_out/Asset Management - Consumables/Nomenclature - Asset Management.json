@@ -1,0 +1,1862 @@
+{
+  "doc": {
+    "title": "Nomenclature",
+    "module": "Asset Management",
+    "summary": "This document provides a comprehensive glossary of terms and definitions used within the Digii Asset Management module, covering concepts from administrative privileges and vendor details to asset categorization, product management, and consumable asset tracking.",
+    "prerequisites": [],
+    "tags": [
+      "Nomenclature",
+      "Definitions",
+      "Glossary",
+      "Asset Management",
+      "Terminology"
+    ]
+  },
+  "chunks": [
+    {
+      "id": "admin-privilege-asset-management-admin",
+      "feature_name": "Admin Privilege - Asset Management Admin",
+      "category": "Asset Management",
+      "what_it_does": "The 'Asset Management Admin' admin privilege provides access to the entire Asset Management module. With this privilege, administrators can manage asset schema, vendor details, products, and assets.",
+      "why_it_matters": "This privilege ensures that designated administrators have comprehensive control over all aspects of asset management, enabling efficient setup and oversight of the system.",
+      "how_to_use": [],
+      "examples": [],
+      "keywords": [
+        "admin privilege",
+        "asset management admin",
+        "access control",
+        "module access",
+        "administrator rights",
+        "manage assets",
+        "asset schema",
+        "vendor details",
+        "products",
+        "asset management module",
+        "admin access",
+        "privileges",
+        "permissions",
+        "full access",
+        "super admin"
+      ],
+      "synonyms": [
+        "asset admin access",
+        "asset management permissions",
+        "admin rights for assets"
+      ],
+      "user_questions": [
+        "What is the 'Asset Management Admin' privilege?",
+        "What can an Asset Management Admin do?",
+        "How do I get full access to the Asset Management module?",
+        "What features are controlled by the Asset Management Admin privilege?",
+        "Who can manage asset schema and vendor details?"
+      ],
+      "related_features": [
+        "admin-privilege-asset-management-admin-detailed",
+        "asset-schema",
+        "vendor-details",
+        "product"
+      ],
+      "tags": [
+        "admin",
+        "privileges",
+        "access",
+        "asset management"
+      ]
+    },
+    {
+      "id": "vendor-details",
+      "feature_name": "Vendor Details",
+      "category": "Asset Management",
+      "what_it_does": "A vendor is any external entity that is involved in the asset lifecycle, either as a supplier, service provider, warranty or insurance provider, reseller, or other external stakeholder.",
+      "why_it_matters": "Tracking vendor details is crucial for managing asset acquisition, maintenance, and disposal, ensuring proper record-keeping and accountability throughout the asset's lifespan.",
+      "how_to_use": [],
+      "examples": [
+        "Supplier of computers",
+        "Company providing warranty for equipment",
+        "Insurance provider for vehicles"
+      ],
+      "keywords": [
+        "vendor",
+        "external entity",
+        "supplier",
+        "service provider",
+        "warranty provider",
+        "insurance provider",
+        "reseller",
+        "stakeholder",
+        "asset lifecycle",
+        "vendor management",
+        "vendor records",
+        "asset acquisition",
+        "asset maintenance",
+        "vendor definition",
+        "supplier definition"
+      ],
+      "synonyms": [
+        "supplier information",
+        "external partner",
+        "service vendor"
+      ],
+      "user_questions": [
+        "What is a vendor in asset management?",
+        "Who are vendors in the asset lifecycle?",
+        "Why track vendor details?",
+        "What kind of entities are considered vendors?",
+        "How do I define a vendor?"
+      ],
+      "related_features": [
+        "vendor-name",
+        "address",
+        "phone",
+        "vendor-since",
+        "gst-number",
+        "type-vendor"
+      ],
+      "tags": [
+        "vendor",
+        "definitions",
+        "asset management"
+      ]
+    },
+    {
+      "id": "vendor-name",
+      "feature_name": "Vendor Name",
+      "category": "Asset Management",
+      "what_it_does": "The Vendor Name refers to the registered name of any external entity (organization, service provider, warranty provider, insurance provider, re-sale buyer, or seller) that is involved in the acquisition, maintenance, insurance, or disposal of assets within the institution.",
+      "why_it_matters": "Accurately recording the vendor's registered name ensures clear identification and proper attribution for all asset-related transactions and relationships.",
+      "how_to_use": [],
+      "examples": [
+        "ABC Tech Solutions",
+        "Global Insurance Co.",
+        "XYZ Resale"
+      ],
+      "keywords": [
+        "vendor name",
+        "registered name",
+        "organization name",
+        "service provider name",
+        "warranty provider name",
+        "insurance provider name",
+        "re-sale buyer name",
+        "seller name",
+        "asset acquisition",
+        "asset maintenance",
+        "vendor identification",
+        "vendor records",
+        "supplier name",
+        "company name"
+      ],
+      "synonyms": [
+        "supplier name",
+        "company name",
+        "entity name"
+      ],
+      "user_questions": [
+        "What is the Vendor Name field for?",
+        "How do I enter a vendor's name?",
+        "Is the vendor name the registered name?",
+        "What types of entities have a vendor name?",
+        "Why is the vendor name important?"
+      ],
+      "related_features": [
+        "vendor-details"
+      ],
+      "tags": [
+        "vendor",
+        "fields",
+        "asset management"
+      ]
+    },
+    {
+      "id": "address",
+      "feature_name": "Address (Vendor)",
+      "category": "Asset Management",
+      "what_it_does": "Vendor Address refers to the physical location or registered address of the vendor (organization, service provider, warranty provider, insurance provider, re-sale buyer, or seller). This field is non-mandatory, meaning that it is optional to fill in the vendor's address when adding vendor records in the Asset Management module.",
+      "why_it_matters": "While optional, providing the vendor's address can be useful for official correspondence, record-keeping, and geographical tracking of partners involved in asset management.",
+      "how_to_use": [],
+      "examples": [],
+      "keywords": [
+        "vendor address",
+        "physical location",
+        "registered address",
+        "optional field",
+        "non-mandatory",
+        "vendor records",
+        "asset management",
+        "contact information",
+        "vendor details",
+        "supplier address",
+        "vendor location"
+      ],
+      "synonyms": [
+        "vendor location",
+        "supplier address"
+      ],
+      "user_questions": [
+        "Is the vendor address required?",
+        "What kind of address should I enter for a vendor?",
+        "Can I leave the vendor address blank?",
+        "Where do I find the vendor's address?",
+        "Why is the vendor address optional?"
+      ],
+      "related_features": [
+        "vendor-details"
+      ],
+      "tags": [
+        "vendor",
+        "fields",
+        "optional",
+        "asset management"
+      ]
+    },
+    {
+      "id": "phone",
+      "feature_name": "Phone (Vendor)",
+      "category": "Asset Management",
+      "what_it_does": "The Vendor Phone Number is an optional field used to store the contact number of the vendor. It is non-mandatory, meaning it is not required to be filled when adding or managing vendor records. However, when this field is used, it is necessary to include the country code for proper international dialing format. This ensures that phone numbers are correctly stored and accessible for communication with the vendor.",
+      "why_it_matters": "Including the vendor's phone number, especially with the country code, facilitates direct communication and ensures accurate contact information for quick resolution of asset-related issues.",
+      "how_to_use": [
+        "1. Enter the vendor's contact number.",
+        "2. Ensure to include the country code (e.g., +1 for USA, +91 for India) for international dialing format."
+      ],
+      "examples": [
+        "+919876543210",
+        "+12125551234"
+      ],
+      "keywords": [
+        "vendor phone number",
+        "contact number",
+        "optional field",
+        "non-mandatory",
+        "country code",
+        "international dialing",
+        "vendor records",
+        "communication",
+        "vendor details",
+        "phone field",
+        "supplier phone",
+        "contact info"
+      ],
+      "synonyms": [
+        "vendor contact",
+        "supplier phone number"
+      ],
+      "user_questions": [
+        "Is the vendor phone number mandatory?",
+        "How do I enter a vendor's phone number?",
+        "Do I need to add a country code for vendor phone numbers?",
+        "What is the format for vendor phone numbers?",
+        "Can I skip adding a vendor phone number?"
+      ],
+      "related_features": [
+        "vendor-details"
+      ],
+      "tags": [
+        "vendor",
+        "fields",
+        "optional",
+        "contact",
+        "asset management"
+      ]
+    },
+    {
+      "id": "vendor-since",
+      "feature_name": "Vendor Since",
+      "category": "Asset Management",
+      "what_it_does": "The Vendor Since is a non-mandatory field that captures the date from which the vendor has been associated with the partner institution.",
+      "why_it_matters": "This optional field helps track the duration of a vendor relationship, which can be useful for historical analysis, partnership evaluations, and understanding long-term engagements.",
+      "how_to_use": [],
+      "examples": [
+        "01/01/2015",
+        "July 1, 2020"
+      ],
+      "keywords": [
+        "vendor since",
+        "association date",
+        "partnership start date",
+        "non-mandatory",
+        "optional field",
+        "vendor history",
+        "vendor relationship",
+        "asset management",
+        "supplier start date",
+        "date of association"
+      ],
+      "synonyms": [
+        "vendor start date",
+        "partner since"
+      ],
+      "user_questions": [
+        "What does 'Vendor Since' mean?",
+        "Is the 'Vendor Since' field required?",
+        "How do I record when a vendor started working with us?",
+        "What date should I put in 'Vendor Since'?",
+        "Why track 'Vendor Since'?"
+      ],
+      "related_features": [
+        "vendor-details"
+      ],
+      "tags": [
+        "vendor",
+        "fields",
+        "optional",
+        "date",
+        "asset management"
+      ]
+    },
+    {
+      "id": "gst-number",
+      "feature_name": "GST Number (Vendor)",
+      "category": "Asset Management",
+      "what_it_does": "The Vendor GST Number is an optional field used to store the Goods and Services Tax (GST) identification number of the vendor. It is non-mandatory, meaning it is not required to be filled when adding or managing vendor records. If this detail is provided, it allows the institution to track and manage tax-related details for purchases and services associated with the vendor.",
+      "why_it_matters": "Providing the Goods and Services Tax (GST) number enables the institution to accurately track and manage tax-related information for purchases and services, ensuring compliance and streamlined financial operations.",
+      "how_to_use": [],
+      "examples": [
+        "27AAAAA0000A1Z5"
+      ],
+      "keywords": [
+        "vendor GST number",
+        "Goods and Services Tax (GST)",
+        "GST identification number",
+        "tax details",
+        "optional field",
+        "non-mandatory",
+        "vendor records",
+        "tax tracking",
+        "financial compliance",
+        "asset management",
+        "supplier GST",
+        "tax ID"
+      ],
+      "synonyms": [
+        "supplier GST",
+        "tax ID"
+      ],
+      "user_questions": [
+        "Is the vendor GST number required?",
+        "What is the purpose of the GST Number field?",
+        "How do I enter a vendor's GST number?",
+        "Can I leave the GST Number blank?",
+        "Why track vendor GST numbers?"
+      ],
+      "related_features": [
+        "vendor-details"
+      ],
+      "tags": [
+        "vendor",
+        "fields",
+        "optional",
+        "tax",
+        "asset management"
+      ]
+    },
+    {
+      "id": "type-vendor",
+      "feature_name": "Type (Vendor)",
+      "category": "Asset Management",
+      "what_it_does": "The Vendor Type is a mandatory field where at least one of the following checkboxes must be selected: Organization, Warranty Provider, Insurance Provider, Re Sale Buyer, Service Provider, Seller. This ensures that the vendor is categorized correctly based on the services offered by them.",
+      "why_it_matters": "Categorizing vendors by type is essential for understanding their role in the asset lifecycle, facilitating targeted communication, and ensuring appropriate management based on the services they provide.",
+      "how_to_use": [
+        "1. When adding a vendor, select at least one checkbox from the available types.",
+        "2. Choose 'Organization' if the vendor is a general company.",
+        "3. Select 'Warranty Provider' if they offer warranties.",
+        "4. Choose 'Insurance Provider' for insurance services.",
+        "5. Select 'Re Sale Buyer' if they purchase assets for resale.",
+        "6. Choose 'Service Provider' for maintenance or other services.",
+        "7. Select 'Seller' if they sell products or assets."
+      ],
+      "examples": [
+        "Selecting 'Seller' and 'Service Provider' for a vendor that both sells and maintains equipment."
+      ],
+      "keywords": [
+        "vendor type",
+        "mandatory field",
+        "categorization",
+        "organization",
+        "warranty provider",
+        "insurance provider",
+        "re sale buyer",
+        "service provider",
+        "seller",
+        "vendor classification",
+        "asset management",
+        "vendor roles",
+        "supplier type",
+        "vendor category"
+      ],
+      "synonyms": [
+        "vendor category",
+        "supplier type",
+        "vendor role"
+      ],
+      "user_questions": [
+        "What are the available vendor types?",
+        "Is vendor type a mandatory field?",
+        "How do I categorize a vendor?",
+        "Can a vendor have multiple types?",
+        "What happens if I don't select a vendor type?"
+      ],
+      "related_features": [
+        "vendor-details"
+      ],
+      "tags": [
+        "vendor",
+        "fields",
+        "mandatory",
+        "categorization",
+        "asset management"
+      ]
+    },
+    {
+      "id": "admin-privilege-asset-management-admin-detailed",
+      "feature_name": "Admin Privilege - Asset Management Module (Detailed)",
+      "category": "Asset Management",
+      "what_it_does": "Admin Privilege within the Asset Management module is a feature that ensures respective administrators can be granted specific privileges to manage and monitor assets. These privileges can be set based on Category and Sub-category, and include 'Add', 'View', and 'Allot' access for Products, and 'Add' and 'View' access for Assets.",
+      "why_it_matters": "This granular control over administrative privileges ensures that administrators are given the appropriate level of access to assets managed under their responsibility, based on the services they are overseeing, enhancing security and operational efficiency.",
+      "how_to_use": [],
+      "examples": [
+        "An administrator might have 'View' access for all products but 'Add' and 'Allot' access only for products within the 'IT Equipment' category."
+      ],
+      "keywords": [
+        "admin privilege",
+        "asset management module",
+        "manage assets",
+        "monitor assets",
+        "category access",
+        "sub-category access",
+        "add product access",
+        "view product access",
+        "allot product access",
+        "add asset access",
+        "view asset access",
+        "granular permissions",
+        "administrator roles",
+        "access control",
+        "privileges",
+        "permissions",
+        "asset security",
+        "role-based access"
+      ],
+      "synonyms": [
+        "asset management permissions",
+        "admin access levels",
+        "asset module privileges"
+      ],
+      "user_questions": [
+        "How are admin privileges set in Asset Management?",
+        "Can I restrict admin access by category?",
+        "What types of access can be granted for products?",
+        "What types of access can be granted for assets?",
+        "How do I ensure administrators have appropriate access to assets?",
+        "What is granular access control in asset management?"
+      ],
+      "related_features": [
+        "admin-privilege-asset-management-admin",
+        "asset-schema",
+        "category-asset-management",
+        "sub-category-asset-management",
+        "product"
+      ],
+      "tags": [
+        "admin",
+        "privileges",
+        "access control",
+        "asset management",
+        "security"
+      ]
+    },
+    {
+      "id": "asset-schema",
+      "feature_name": "Asset Schema",
+      "category": "Asset Management",
+      "what_it_does": "Asset Schema comprises the structure used to categorize and organize assets within the Asset Management module. It includes Category, Sub-category, and Fields.",
+      "why_it_matters": "A well-defined asset schema is fundamental for efficient asset organization, searchability, and consistent data management, enabling institutions to effectively track and manage their assets.",
+      "how_to_use": [],
+      "examples": [
+        "Defining an asset schema for 'IT Equipment' with categories like 'Laptops' and 'Desktops', and fields for 'Processor Type' and 'RAM'."
+      ],
+      "keywords": [
+        "asset schema",
+        "asset structure",
+        "categorize assets",
+        "organize assets",
+        "asset management module",
+        "category",
+        "sub-category",
+        "fields",
+        "data structure",
+        "asset classification",
+        "asset organization",
+        "schema definition"
+      ],
+      "synonyms": [
+        "asset structure",
+        "asset classification framework",
+        "asset data model"
+      ],
+      "user_questions": [
+        "What is an asset schema?",
+        "What components make up an asset schema?",
+        "How does asset schema help organize assets?",
+        "Why is asset schema important?",
+        "Can I customize the asset schema?"
+      ],
+      "related_features": [
+        "category-asset-management",
+        "sub-category-asset-management",
+        "fields-consumable-category"
+      ],
+      "tags": [
+        "asset management",
+        "schema",
+        "structure",
+        "categorization"
+      ]
+    },
+    {
+      "id": "consumable-asset",
+      "feature_name": "Consumable Asset",
+      "category": "Asset Management",
+      "what_it_does": "Consumable Assets in asset management refer to items that are used up or depleted during their use and need to be replaced periodically. These assets have a short lifespan and are typically low-cost items that don't hold long-term value or depreciation. They are generally not tracked individually in the same way as fixed assets but are important for operational processes.",
+      "why_it_matters": "Proper management of consumable assets ensures continuous operational efficiency by preventing stockouts of essential items, while also controlling costs associated with frequent replenishment.",
+      "how_to_use": [],
+      "examples": [
+        "Pens",
+        "Printer ink cartridges",
+        "Paper",
+        "Cleaning supplies"
+      ],
+      "keywords": [
+        "consumable assets",
+        "depleted items",
+        "used up items",
+        "short lifespan",
+        "low-cost items",
+        "no depreciation",
+        "operational processes",
+        "inventory management",
+        "replenishment",
+        "stock management",
+        "consumables",
+        "expendable items",
+        "supplies"
+      ],
+      "synonyms": [
+        "expendable items",
+        "supplies",
+        "inventory items"
+      ],
+      "user_questions": [
+        "What is a consumable asset?",
+        "How are consumable assets different from fixed assets?",
+        "Give examples of consumable assets.",
+        "Why are consumable assets important for operations?",
+        "Are consumable assets tracked individually?"
+      ],
+      "related_features": [
+        "category-asset-management",
+        "sub-category-asset-management",
+        "fields-consumable-category",
+        "product",
+        "unit-of-measurement",
+        "store-location",
+        "re-order-threshold",
+        "handle-expiry-for-this-product",
+        "units-consumable-assets",
+        "batches",
+        "status-consumable-assets",
+        "allotment-rule-fefo",
+        "allot-expired-quantity"
+      ],
+      "tags": [
+        "asset management",
+        "consumables",
+        "inventory",
+        "definitions"
+      ]
+    },
+    {
+      "id": "category-asset-management",
+      "feature_name": "Category (Asset Management)",
+      "category": "Asset Management",
+      "what_it_does": "Category in Asset Management refers to the broad classification under which assets are grouped.",
+      "why_it_matters": "Categories provide a high-level organizational structure for assets, making it easier to manage, report on, and locate different types of items within the institution.",
+      "how_to_use": [],
+      "examples": [
+        "Stationary",
+        "IT Equipment",
+        "Furniture",
+        "Vehicles"
+      ],
+      "keywords": [
+        "category",
+        "asset classification",
+        "asset grouping",
+        "broad classification",
+        "asset management",
+        "organizational structure",
+        "asset types",
+        "asset class",
+        "group assets"
+      ],
+      "synonyms": [
+        "asset group",
+        "asset class"
+      ],
+      "user_questions": [
+        "What is a category in asset management?",
+        "How are assets grouped by category?",
+        "Give an example of an asset category.",
+        "Why use categories for assets?",
+        "What is the purpose of asset categories?"
+      ],
+      "related_features": [
+        "asset-schema",
+        "sub-category-asset-management"
+      ],
+      "tags": [
+        "asset management",
+        "categorization",
+        "schema"
+      ]
+    },
+    {
+      "id": "sub-category-asset-management",
+      "feature_name": "Sub-Category (Asset Management)",
+      "category": "Asset Management",
+      "what_it_does": "Sub-category in Asset Management refers to a more specific classification under each category.",
+      "why_it_matters": "Sub-categories allow for finer-grained organization of assets, improving precision in inventory management, reporting, and targeted asset tracking within broader categories.",
+      "how_to_use": [],
+      "examples": [
+        "Under 'Stationary' category: 'Pens', 'Books', 'Paper'. Under 'IT Equipment': 'Laptops', 'Desktops', 'Printers'."
+      ],
+      "keywords": [
+        "sub-category",
+        "specific classification",
+        "asset classification",
+        "asset grouping",
+        "asset management",
+        "detailed organization",
+        "asset types",
+        "sub-group",
+        "asset sub-class"
+      ],
+      "synonyms": [
+        "sub-group",
+        "asset sub-class"
+      ],
+      "user_questions": [
+        "What is a sub-category in asset management?",
+        "How do sub-categories relate to categories?",
+        "Give an example of an asset sub-category.",
+        "Why use sub-categories for assets?",
+        "How can I further classify assets?"
+      ],
+      "related_features": [
+        "asset-schema",
+        "category-asset-management"
+      ],
+      "tags": [
+        "asset management",
+        "categorization",
+        "schema"
+      ]
+    },
+    {
+      "id": "fields-consumable-category",
+      "feature_name": "Fields (Consumable Category)",
+      "category": "Asset Management",
+      "what_it_does": "Consumable category does not support custom fields.",
+      "why_it_matters": "This limitation means that consumable assets are managed with a predefined set of attributes, simplifying their tracking but limiting customization for specific data points.",
+      "how_to_use": [],
+      "examples": [],
+      "keywords": [
+        "fields",
+        "consumable category",
+        "custom fields",
+        "asset schema",
+        "asset attributes",
+        "data fields",
+        "consumable asset management",
+        "field limitations",
+        "custom attributes",
+        "data points"
+      ],
+      "synonyms": [
+        "custom attributes",
+        "data points"
+      ],
+      "user_questions": [
+        "Can I add custom fields to consumable assets?",
+        "What fields are available for consumable categories?",
+        "Are there custom fields for consumables?",
+        "Why can't I add custom fields to consumable assets?",
+        "What is the field structure for consumable assets?"
+      ],
+      "related_features": [
+        "asset-schema",
+        "consumable-asset"
+      ],
+      "tags": [
+        "asset management",
+        "consumables",
+        "fields",
+        "limitations"
+      ]
+    },
+    {
+      "id": "product",
+      "feature_name": "Product",
+      "category": "Asset Management",
+      "what_it_does": "A Product can be defined as a specific combination of features associated with a particular brand. It represents a model or type of item that is characterized by its distinct attributes, such as specifications, functionality, and brand.",
+      "why_it_matters": "Defining products allows for standardized tracking of items, ensuring consistency in inventory, procurement, and asset management processes across different units of the same item.",
+      "how_to_use": [],
+      "examples": [
+        "Dell XPS 15 (a specific laptop model)",
+        "Parker Jotter Pen (a specific pen model)"
+      ],
+      "keywords": [
+        "product",
+        "specific combination of features",
+        "brand",
+        "model",
+        "item type",
+        "attributes",
+        "specifications",
+        "functionality",
+        "asset management",
+        "product definition",
+        "item tracking",
+        "asset type"
+      ],
+      "synonyms": [
+        "item model",
+        "asset type",
+        "brand model"
+      ],
+      "user_questions": [
+        "What is a product in asset management?",
+        "How is a product defined?",
+        "What are the characteristics of a product?",
+        "Give an example of a product.",
+        "Why define products in asset management?"
+      ],
+      "related_features": [
+        "product-name",
+        "product-code",
+        "product-description",
+        "unit-of-measurement"
+      ],
+      "tags": [
+        "asset management",
+        "product",
+        "definitions"
+      ]
+    },
+    {
+      "id": "product-name",
+      "feature_name": "Product Name",
+      "category": "Asset Management",
+      "what_it_does": "The Product Name refers to the specific name or designation given to a product based on its brand and model, reflecting its unique combination of features.",
+      "why_it_matters": "A clear and consistent product name ensures easy identification and differentiation of various items, streamlining inventory management and procurement.",
+      "how_to_use": [],
+      "examples": [
+        "HP LaserJet Pro M404dn",
+        "Logitech MX Master 3S"
+      ],
+      "keywords": [
+        "product name",
+        "specific name",
+        "designation",
+        "brand",
+        "model",
+        "features",
+        "unique identifier",
+        "asset management",
+        "product identification",
+        "item name",
+        "model name"
+      ],
+      "synonyms": [
+        "item name",
+        "model name",
+        "product title"
+      ],
+      "user_questions": [
+        "What is the Product Name field for?",
+        "How should I name a product?",
+        "What defines a product name?",
+        "Is the product name unique?",
+        "Why is a consistent product name important?"
+      ],
+      "related_features": [
+        "product"
+      ],
+      "tags": [
+        "asset management",
+        "product",
+        "fields"
+      ]
+    },
+    {
+      "id": "product-code",
+      "feature_name": "Product Code",
+      "category": "Asset Management",
+      "what_it_does": "A unique identifier assigned to each product for tracking and management purposes.",
+      "why_it_matters": "Unique product codes are essential for accurate inventory tracking, preventing errors, and facilitating efficient data management and reporting for each distinct product.",
+      "how_to_use": [],
+      "examples": [
+        "PROD-001",
+        "IT-LAP-HP-005"
+      ],
+      "keywords": [
+        "product code",
+        "unique identifier",
+        "tracking",
+        "management purposes",
+        "inventory tracking",
+        "asset management",
+        "product ID",
+        "SKU",
+        "item code"
+      ],
+      "synonyms": [
+        "item code",
+        "SKU",
+        "product ID"
+      ],
+      "user_questions": [
+        "What is a product code?",
+        "Why do products need a unique code?",
+        "How are product codes used for tracking?",
+        "Can I generate product codes automatically?",
+        "What is the purpose of a product code?"
+      ],
+      "related_features": [
+        "product"
+      ],
+      "tags": [
+        "asset management",
+        "product",
+        "fields",
+        "identifier"
+      ]
+    },
+    {
+      "id": "product-description",
+      "feature_name": "Product Description",
+      "category": "Asset Management",
+      "what_it_does": "A brief description of the product, detailing its features, specifications, or usage.",
+      "why_it_matters": "A comprehensive product description provides essential information for users, aiding in product identification, understanding its capabilities, and making informed decisions about its use or procurement.",
+      "how_to_use": [],
+      "examples": [
+        "'15-inch laptop with Intel i7 processor, 16GB RAM, 512GB SSD, ideal for graphic design.'"
+      ],
+      "keywords": [
+        "product description",
+        "features",
+        "specifications",
+        "usage",
+        "brief description",
+        "product details",
+        "asset management",
+        "item information",
+        "product specs"
+      ],
+      "synonyms": [
+        "item description",
+        "product details",
+        "specifications"
+      ],
+      "user_questions": [
+        "What should be included in a product description?",
+        "Where can I find product specifications?",
+        "How detailed should a product description be?",
+        "What is the purpose of a product description?",
+        "Can I add usage instructions to the product description?"
+      ],
+      "related_features": [
+        "product"
+      ],
+      "tags": [
+        "asset management",
+        "product",
+        "fields"
+      ]
+    },
+    {
+      "id": "unit-of-measurement",
+      "feature_name": "Unit of Measurement (UOM)",
+      "category": "Asset Management",
+      "what_it_does": "The Unit of Measurement (UOM) refers to the standard unit used to quantify or measure the product. It defines how the product is measured and tracked within the system, based on its attributes and nature. For example, for a Pens (as a product), the Unit of Measurement could be in pieces, as each pen is considered a single, distinct item.",
+      "why_it_matters": "Defining a consistent Unit of Measurement (UOM) is critical for accurate inventory management, procurement, and usage tracking, ensuring that quantities are uniformly understood and recorded.",
+      "how_to_use": [],
+      "examples": [
+        "Pieces",
+        "Boxes",
+        "Liters",
+        "Kilograms",
+        "Reams"
+      ],
+      "keywords": [
+        "unit of measurement (UOM)",
+        "quantify product",
+        "measure product",
+        "tracking unit",
+        "inventory management",
+        "product attributes",
+        "pieces",
+        "boxes",
+        "liters",
+        "kilograms",
+        "asset management",
+        "measurement standard",
+        "stock unit",
+        "quantity unit"
+      ],
+      "synonyms": [
+        "measurement unit",
+        "stock unit",
+        "quantity unit"
+      ],
+      "user_questions": [
+        "What is a Unit of Measurement (UOM)?",
+        "How do I set the UOM for a product?",
+        "Give examples of UOMs for different products.",
+        "Why is UOM important for inventory?",
+        "How are products measured in the system?"
+      ],
+      "related_features": [
+        "product",
+        "consumable-asset",
+        "units-consumable-assets"
+      ],
+      "tags": [
+        "asset management",
+        "product",
+        "inventory",
+        "measurement"
+      ]
+    },
+    {
+      "id": "store-location",
+      "feature_name": "Store Location (Consumable Assets)",
+      "category": "Asset Management",
+      "what_it_does": "Store Location for consumable assets in asset management refers to the physical or virtual location where consumable items are stored, managed, and accessed within an institution.",
+      "why_it_matters": "Designating store locations for consumables is vital for efficient inventory organization, quick retrieval, and accurate stock management, minimizing loss and improving accessibility.",
+      "how_to_use": [],
+      "examples": [
+        "Main Store Room",
+        "Departmental Cabinet A",
+        "Virtual Warehouse 1"
+      ],
+      "keywords": [
+        "store location",
+        "consumable assets",
+        "physical location",
+        "virtual location",
+        "storage",
+        "inventory management",
+        "stock location",
+        "asset management",
+        "consumable storage",
+        "warehouse",
+        "storage area"
+      ],
+      "synonyms": [
+        "storage location",
+        "inventory location",
+        "warehouse"
+      ],
+      "user_questions": [
+        "What is a store location for consumable assets?",
+        "How do I define a store location?",
+        "Can store locations be virtual?",
+        "Why is store location important for consumables?",
+        "Where are consumable items stored?"
+      ],
+      "related_features": [
+        "consumable-asset"
+      ],
+      "tags": [
+        "asset management",
+        "consumables",
+        "inventory",
+        "location"
+      ]
+    },
+    {
+      "id": "re-order-threshold",
+      "feature_name": "Re-order Threshold (Consumables)",
+      "category": "Asset Management",
+      "what_it_does": "Re-order Threshold for consumables in asset management refers to the predefined minimum inventory level at which an order should be placed to replenish stock before it runs out.",
+      "why_it_matters": "Setting a re-order threshold is crucial for preventing stockouts of essential consumable items, ensuring continuous operations, and optimizing procurement processes by triggering timely replenishment.",
+      "how_to_use": [],
+      "examples": [
+        "If the re-order threshold for pens is 50, an order is placed when stock drops to 50 units or below."
+      ],
+      "keywords": [
+        "re-order threshold",
+        "minimum inventory level",
+        "replenish stock",
+        "prevent stockouts",
+        "consumables",
+        "asset management",
+        "inventory management",
+        "procurement trigger",
+        "stock level",
+        "reorder point",
+        "safety stock"
+      ],
+      "synonyms": [
+        "reorder point",
+        "minimum stock level",
+        "safety stock"
+      ],
+      "user_questions": [
+        "What is the re-order threshold for consumables?",
+        "How do I set a re-order threshold?",
+        "Why is a re-order threshold important?",
+        "What happens when stock falls below the threshold?",
+        "How can I prevent running out of consumables?"
+      ],
+      "related_features": [
+        "consumable-asset",
+        "status-consumable-assets"
+      ],
+      "tags": [
+        "asset management",
+        "consumables",
+        "inventory",
+        "procurement"
+      ]
+    },
+    {
+      "id": "handle-expiry-for-this-product",
+      "feature_name": "Handle Expiry for this Product",
+      "category": "Asset Management",
+      "what_it_does": "This feature enables or disables the tracking of expiry dates for a specific product. If enabled, the system will monitor and manage the expiry dates of batches of this product.",
+      "why_it_matters": "Enabling expiry handling is critical for managing perishable or time-sensitive consumable assets, ensuring that only usable items are allocated and reducing waste or risks associated with expired stock.",
+      "how_to_use": [],
+      "examples": [
+        "Activating this setting for food items or medical supplies to ensure they are used before their expiry date."
+      ],
+      "keywords": [
+        "handle expiry",
+        "expiry tracking",
+        "product expiry",
+        "consumable expiry",
+        "manage expiry dates",
+        "perishable items",
+        "time-sensitive assets",
+        "asset management",
+        "batch expiry",
+        "expiration management",
+        "track expiry date"
+      ],
+      "synonyms": [
+        "expiry management",
+        "track expiry date"
+      ],
+      "user_questions": [
+        "How do I enable expiry tracking for a product?",
+        "What does 'Handle Expiry for this product' mean?",
+        "Can I disable expiry date tracking?",
+        "Why track expiry dates for products?",
+        "Which products should have expiry handling enabled?"
+      ],
+      "related_features": [
+        "consumable-asset",
+        "batches",
+        "expiry-date",
+        "usable-quantity",
+        "expired-quantity",
+        "allotment-rule-fefo",
+        "allot-expired-quantity"
+      ],
+      "tags": [
+        "asset management",
+        "consumables",
+        "expiry",
+        "inventory"
+      ]
+    },
+    {
+      "id": "units-consumable-assets",
+      "feature_name": "Units (Consumable Assets)",
+      "category": "Asset Management",
+      "what_it_does": "Units in the context of Consumable Assets refer to the measurement or counting standard used to track and manage the quantity of consumable items within an institution. A unit defines how consumables are counted, tracked, and replenished, ensuring clarity in inventory management, procurement, and usage tracking.",
+      "why_it_matters": "Consistent unit definition for consumable assets is essential for accurate inventory counts, streamlined procurement, and precise usage tracking, preventing discrepancies and optimizing stock levels.",
+      "how_to_use": [],
+      "examples": [
+        "Counting pens in 'pieces', paper in 'reams', or cleaning solution in 'liters'."
+      ],
+      "keywords": [
+        "units",
+        "consumable assets",
+        "measurement standard",
+        "counting standard",
+        "quantity tracking",
+        "inventory management",
+        "procurement",
+        "usage tracking",
+        "asset management",
+        "consumable units",
+        "stock units"
+      ],
+      "synonyms": [
+        "consumable quantity",
+        "stock units"
+      ],
+      "user_questions": [
+        "What do 'Units' mean for consumable assets?",
+        "How are consumable units defined?",
+        "Why is it important to define units for consumables?",
+        "How are consumables counted?",
+        "What is the standard for tracking consumable quantity?"
+      ],
+      "related_features": [
+        "consumable-asset",
+        "unit-of-measurement"
+      ],
+      "tags": [
+        "asset management",
+        "consumables",
+        "inventory",
+        "measurement"
+      ]
+    },
+    {
+      "id": "batches",
+      "feature_name": "Batches (Consumable Assets)",
+      "category": "Asset Management",
+      "what_it_does": "Batches are groups of consumable items produced, purchased, or received together, typically identified by a Batch ID. This helps institutions track items based on production or procurement timelines, ensuring better inventory management, expiry tracking, and quality control. It includes 'Batch ID' (a unique identifier) and 'Batch Quantity' (the total number of units within a specific batch).",
+      "why_it_matters": "Batch tracking is crucial for managing consumable assets, especially those with expiry dates or quality variations, enabling precise inventory control, efficient recall management, and adherence to 'First Expired First Out' (FEFO) principles.",
+      "how_to_use": [],
+      "examples": [
+        "A batch of 100 pens received on 2023-01-15 with Batch ID 'PEN-2023-001'.",
+        "A batch of medical supplies with a specific expiry date."
+      ],
+      "keywords": [
+        "batches",
+        "consumable items",
+        "batch ID",
+        "batch quantity",
+        "production timelines",
+        "procurement timelines",
+        "inventory management",
+        "expiry tracking",
+        "quality control",
+        "asset management",
+        "grouping items",
+        "item groups",
+        "stock batches",
+        "lot number"
+      ],
+      "synonyms": [
+        "item groups",
+        "stock batches"
+      ],
+      "user_questions": [
+        "What are batches in consumable asset management?",
+        "How are batches identified?",
+        "What is a Batch ID?",
+        "What is Batch Quantity?",
+        "Why use batches for consumables?",
+        "How do batches help with expiry tracking?"
+      ],
+      "related_features": [
+        "consumable-asset",
+        "batch-id",
+        "batch-quantity",
+        "expiry-date",
+        "allotment-rule-fefo"
+      ],
+      "tags": [
+        "asset management",
+        "consumables",
+        "inventory",
+        "batches"
+      ]
+    },
+    {
+      "id": "purchase-order-id",
+      "feature_name": "Purchase Order ID",
+      "category": "Asset Management",
+      "what_it_does": "A unique identifier for the purchase order associated with the asset.",
+      "why_it_matters": "Linking assets to their Purchase Order (PO) ID ensures clear traceability of acquisition, simplifies financial reconciliation, and provides a direct reference for procurement records.",
+      "how_to_use": [],
+      "examples": [
+        "PO-2023-00123",
+        "PURCHASE-XYZ-456"
+      ],
+      "keywords": [
+        "purchase order ID",
+        "PO ID",
+        "unique identifier",
+        "asset association",
+        "tracking",
+        "procurement",
+        "financial records",
+        "asset management",
+        "order number",
+        "PO number"
+      ],
+      "synonyms": [
+        "PO number",
+        "order ID"
+      ],
+      "user_questions": [
+        "What is a Purchase Order ID?",
+        "How is the PO ID used for assets?",
+        "Why link assets to a purchase order?",
+        "Where do I find the Purchase Order ID?",
+        "What is the purpose of a PO ID?"
+      ],
+      "related_features": [
+        "invoice-number",
+        "receipt-number"
+      ],
+      "tags": [
+        "asset management",
+        "procurement",
+        "fields",
+        "identifier"
+      ]
+    },
+    {
+      "id": "invoice-number",
+      "feature_name": "Invoice Number",
+      "category": "Asset Management",
+      "what_it_does": "The invoice number from the vendor for the purchase of the asset.",
+      "why_it_matters": "Recording the invoice number is crucial for financial reconciliation, auditing, and verifying the purchase details of an asset against vendor records.",
+      "how_to_use": [],
+      "examples": [
+        "INV-2023-00567",
+        "ABC-12345"
+      ],
+      "keywords": [
+        "invoice number",
+        "vendor invoice",
+        "purchase of asset",
+        "financial records",
+        "auditing",
+        "asset management",
+        "billing number",
+        "bill number",
+        "vendor bill ID"
+      ],
+      "synonyms": [
+        "bill number",
+        "vendor bill ID"
+      ],
+      "user_questions": [
+        "What is the Invoice Number field for?",
+        "Where do I get the invoice number?",
+        "Why is the invoice number important for assets?",
+        "How do I record an asset's invoice number?",
+        "What is the purpose of an invoice number?"
+      ],
+      "related_features": [
+        "purchase-order-id",
+        "receipt-number"
+      ],
+      "tags": [
+        "asset management",
+        "procurement",
+        "fields",
+        "finance"
+      ]
+    },
+    {
+      "id": "receipt-number",
+      "feature_name": "Receipt Number",
+      "category": "Asset Management",
+      "what_it_does": "The receipt number confirming the asset's purchase or delivery.",
+      "why_it_matters": "The receipt number provides proof of purchase or delivery, serving as an important record for verifying asset acquisition and resolving any discrepancies with vendors.",
+      "how_to_use": [],
+      "examples": [
+        "REC-2023-00890",
+        "DELIVERY-XYZ-789"
+      ],
+      "keywords": [
+        "receipt number",
+        "purchase confirmation",
+        "delivery confirmation",
+        "proof of purchase",
+        "asset acquisition",
+        "asset management",
+        "delivery receipt",
+        "delivery receipt number",
+        "proof of delivery ID"
+      ],
+      "synonyms": [
+        "delivery receipt number",
+        "proof of delivery ID"
+      ],
+      "user_questions": [
+        "What is the Receipt Number?",
+        "How is the receipt number used for assets?",
+        "Why record the receipt number?",
+        "Where can I find the receipt number?",
+        "What does the receipt number confirm?"
+      ],
+      "related_features": [
+        "purchase-order-id",
+        "invoice-number"
+      ],
+      "tags": [
+        "asset management",
+        "procurement",
+        "fields",
+        "finance"
+      ]
+    },
+    {
+      "id": "cost-per-unit",
+      "feature_name": "Cost per Unit (Consumable Asset)",
+      "category": "Asset Management",
+      "what_it_does": "The price for one individual unit of a consumable asset. This value helps calculate the overall cost of the asset based on the quantity.",
+      "why_it_matters": "Tracking the cost per unit is essential for accurate financial accounting, budgeting, and calculating the total value of consumable inventory, enabling better cost control.",
+      "how_to_use": [],
+      "examples": [
+        "$5.00 for one pen",
+        "€10.50 for one ream of paper"
+      ],
+      "keywords": [
+        "cost per unit",
+        "price per unit",
+        "individual unit cost",
+        "consumable asset cost",
+        "overall cost calculation",
+        "financial accounting",
+        "budgeting",
+        "inventory valuation",
+        "asset management",
+        "unit price",
+        "per unit cost"
+      ],
+      "synonyms": [
+        "unit price",
+        "per unit cost"
+      ],
+      "user_questions": [
+        "What is 'Cost per Unit' for consumables?",
+        "How is 'Cost per Unit' used?",
+        "Why track the cost per unit?",
+        "How does cost per unit affect total cost?",
+        "What is the price of a single consumable item?"
+      ],
+      "related_features": [
+        "consumable-asset",
+        "total-cost"
+      ],
+      "tags": [
+        "asset management",
+        "consumables",
+        "finance",
+        "cost"
+      ]
+    },
+    {
+      "id": "total-cost",
+      "feature_name": "Total Cost (Consumable Assets)",
+      "category": "Asset Management",
+      "what_it_does": "The overall cost of the consumable items in stock, calculated as the product of the cost per unit and the total quantity of the asset.",
+      "why_it_matters": "Calculating the total cost provides a comprehensive financial overview of consumable inventory, aiding in budget management, financial reporting, and understanding the overall investment in operational supplies.",
+      "how_to_use": [
+        "Total Cost = Cost per Unit * Total Quantity"
+      ],
+      "examples": [
+        "If Cost per Unit is $5 and Total Quantity is 100, Total Cost is $500."
+      ],
+      "keywords": [
+        "total cost",
+        "overall cost",
+        "consumable items in stock",
+        "cost per unit",
+        "total quantity",
+        "financial overview",
+        "budget management",
+        "financial reporting",
+        "inventory valuation",
+        "asset management",
+        "inventory value",
+        "overall inventory cost"
+      ],
+      "synonyms": [
+        "inventory value",
+        "overall inventory cost"
+      ],
+      "user_questions": [
+        "How is the total cost of consumable assets calculated?",
+        "What does 'Total Cost' represent for consumables?",
+        "Why is total cost important for inventory?",
+        "How do I find the total value of my consumable stock?",
+        "What factors determine the total cost?"
+      ],
+      "related_features": [
+        "consumable-asset",
+        "cost-per-unit",
+        "total-quantity"
+      ],
+      "tags": [
+        "asset management",
+        "consumables",
+        "finance",
+        "cost"
+      ]
+    },
+    {
+      "id": "batch-id",
+      "feature_name": "Batch ID",
+      "category": "Asset Management",
+      "what_it_does": "A unique identifier assigned to a specific batch of consumable items. It helps in tracking and managing items grouped together during procurement.",
+      "why_it_matters": "The Batch ID is crucial for precise tracking of consumable groups, especially for managing expiry dates, quality control, and efficient inventory rotation (e.g., First Expired First Out (FEFO)).",
+      "how_to_use": [],
+      "examples": [
+        "BATCH-PEN-2023-001",
+        "MED-SUP-005-Q3"
+      ],
+      "keywords": [
+        "batch ID",
+        "unique identifier",
+        "consumable items",
+        "grouped items",
+        "procurement tracking",
+        "inventory management",
+        "expiry tracking",
+        "quality control",
+        "asset management",
+        "batch number",
+        "group ID",
+        "lot number"
+      ],
+      "synonyms": [
+        "batch number",
+        "group ID",
+        "lot number"
+      ],
+      "user_questions": [
+        "What is a Batch ID?",
+        "How is a Batch ID used?",
+        "Why is Batch ID important for consumables?",
+        "Can I track items by Batch ID?",
+        "What is the purpose of a batch identifier?"
+      ],
+      "related_features": [
+        "batches",
+        "batch-quantity",
+        "expiry-date"
+      ],
+      "tags": [
+        "asset management",
+        "consumables",
+        "inventory",
+        "identifier"
+      ]
+    },
+    {
+      "id": "batch-quantity",
+      "feature_name": "Batch Quantity",
+      "category": "Asset Management",
+      "what_it_does": "The total number of consumable units in a specific batch, providing visibility into how many items are included in each batch.",
+      "why_it_matters": "Knowing the batch quantity is essential for accurate inventory counts, managing stock levels, and planning replenishment, ensuring that the correct number of items are accounted for within each group.",
+      "how_to_use": [],
+      "examples": [
+        "A batch of 500 units of paper",
+        "A batch of 20 bottles of sanitizer"
+      ],
+      "keywords": [
+        "batch quantity",
+        "total number of units",
+        "consumable units",
+        "items per batch",
+        "inventory visibility",
+        "stock management",
+        "replenishment planning",
+        "asset management",
+        "batch size",
+        "quantity per batch",
+        "units in batch"
+      ],
+      "synonyms": [
+        "batch size",
+        "quantity per batch",
+        "units in batch"
+      ],
+      "user_questions": [
+        "What is Batch Quantity?",
+        "How is Batch Quantity used in inventory?",
+        "Why is it important to know the batch quantity?",
+        "How many units are in a batch?",
+        "What does batch quantity tell me?"
+      ],
+      "related_features": [
+        "batches",
+        "batch-id",
+        "total-quantity"
+      ],
+      "tags": [
+        "asset management",
+        "consumables",
+        "inventory",
+        "quantity"
+      ]
+    },
+    {
+      "id": "expiry-date",
+      "feature_name": "Expiry Date (Consumable Assets)",
+      "category": "Asset Management",
+      "what_it_does": "The date after which the consumable item is no longer safe or suitable for use.",
+      "why_it_matters": "Tracking expiry dates is critical for managing perishable or time-sensitive consumable assets, ensuring that only safe and usable items are distributed, minimizing waste, and complying with safety regulations.",
+      "how_to_use": [],
+      "examples": [
+        "For medical supplies, an expiry date of '2024-12-31' means it cannot be used after December 31, 2024."
+      ],
+      "keywords": [
+        "expiry date",
+        "consumable item expiry",
+        "no longer safe for use",
+        "unsuitable for use",
+        "perishable items",
+        "time-sensitive assets",
+        "waste reduction",
+        "safety regulations",
+        "asset management",
+        "expiration date",
+        "use-by date",
+        "best before date"
+      ],
+      "synonyms": [
+        "expiration date",
+        "use-by date",
+        "best before date"
+      ],
+      "user_questions": [
+        "What is the expiry date for consumable items?",
+        "Why is expiry date tracking important?",
+        "What happens after the expiry date?",
+        "How do I manage items with expiry dates?",
+        "Can I use an item after its expiry date?"
+      ],
+      "related_features": [
+        "consumable-asset",
+        "handle-expiry-for-this-product",
+        "batches",
+        "usable-quantity",
+        "expired-quantity",
+        "allotment-rule-fefo",
+        "allot-expired-quantity"
+      ],
+      "tags": [
+        "asset management",
+        "consumables",
+        "expiry",
+        "inventory"
+      ]
+    },
+    {
+      "id": "usable-quantity",
+      "feature_name": "Usable Quantity (Consumable Assets)",
+      "category": "Asset Management",
+      "what_it_does": "The portion of the total stock that is still within the expiry date and fit for use. It's the quantity of consumables that are actively available for use.",
+      "why_it_matters": "Knowing the usable quantity is essential for accurate inventory planning, ensuring that only valid and safe items are allocated, and preventing the distribution of expired stock.",
+      "how_to_use": [],
+      "examples": [
+        "If total stock is 100 units and 20 have expired, the usable quantity is 80 units."
+      ],
+      "keywords": [
+        "usable quantity",
+        "total stock",
+        "within expiry date",
+        "fit for use",
+        "actively available",
+        "consumables",
+        "inventory planning",
+        "stock management",
+        "asset management",
+        "available quantity",
+        "non-expired stock",
+        "good stock"
+      ],
+      "synonyms": [
+        "available quantity",
+        "non-expired stock",
+        "good stock"
+      ],
+      "user_questions": [
+        "What is 'Usable Quantity' for consumables?",
+        "How is usable quantity determined?",
+        "Why is it important to track usable quantity?",
+        "What does 'usable quantity' mean for inventory?",
+        "How do I know how many consumables are available?"
+      ],
+      "related_features": [
+        "consumable-asset",
+        "expiry-date",
+        "expired-quantity",
+        "total-quantity"
+      ],
+      "tags": [
+        "asset management",
+        "consumables",
+        "inventory",
+        "quantity"
+      ]
+    },
+    {
+      "id": "expired-quantity",
+      "feature_name": "Expired Quantity (Consumable Assets)",
+      "category": "Asset Management",
+      "what_it_does": "The portion of the stock that has passed its expiry date and is no longer usable. This quantity needs to be managed carefully to avoid misuse.",
+      "why_it_matters": "Tracking expired quantity is crucial for preventing the accidental use of unsafe items, facilitating proper disposal, and maintaining accurate inventory records by distinguishing between usable and unusable stock.",
+      "how_to_use": [],
+      "examples": [
+        "If 20 units of a medical supply batch have passed their expiry date, they are recorded as expired quantity."
+      ],
+      "keywords": [
+        "expired quantity",
+        "passed expiry date",
+        "no longer usable",
+        "stock management",
+        "misuse prevention",
+        "disposal",
+        "inventory records",
+        "consumables",
+        "asset management",
+        "unusable stock",
+        "out-of-date stock",
+        "waste quantity"
+      ],
+      "synonyms": [
+        "unusable quantity",
+        "out-of-date stock",
+        "waste quantity"
+      ],
+      "user_questions": [
+        "What is 'Expired Quantity' for consumables?",
+        "How is expired quantity identified?",
+        "Why is it important to track expired quantity?",
+        "What should I do with expired quantity?",
+        "How does expired quantity affect total stock?"
+      ],
+      "related_features": [
+        "consumable-asset",
+        "expiry-date",
+        "usable-quantity",
+        "total-quantity",
+        "allot-expired-quantity"
+      ],
+      "tags": [
+        "asset management",
+        "consumables",
+        "inventory",
+        "quantity",
+        "expiry"
+      ]
+    },
+    {
+      "id": "total-quantity",
+      "feature_name": "Total Quantity (Consumable Assets)",
+      "category": "Asset Management",
+      "what_it_does": "The total number of consumable items in stock, including both usable and expired quantities. This represents the full inventory of the consumable asset at any given time.",
+      "why_it_matters": "The total quantity provides a complete picture of all consumable items held in inventory, which is essential for comprehensive stock audits, overall asset valuation, and long-term planning.",
+      "how_to_use": [
+        "Total Quantity = Usable Quantity + Expired Quantity"
+      ],
+      "examples": [
+        "If usable quantity is 80 and expired quantity is 20, the total quantity is 100."
+      ],
+      "keywords": [
+        "total quantity",
+        "consumable items in stock",
+        "usable quantity",
+        "expired quantity",
+        "full inventory",
+        "stock audit",
+        "asset valuation",
+        "inventory management",
+        "asset management",
+        "overall stock",
+        "gross inventory",
+        "total units"
+      ],
+      "synonyms": [
+        "overall stock",
+        "gross inventory",
+        "total units"
+      ],
+      "user_questions": [
+        "What is 'Total Quantity' for consumables?",
+        "How is total quantity calculated?",
+        "Why track total quantity?",
+        "What does total quantity include?",
+        "How do I get a full inventory count of consumables?"
+      ],
+      "related_features": [
+        "consumable-asset",
+        "usable-quantity",
+        "expired-quantity",
+        "batch-quantity"
+      ],
+      "tags": [
+        "asset management",
+        "consumables",
+        "inventory",
+        "quantity"
+      ]
+    },
+    {
+      "id": "status-consumable-assets",
+      "feature_name": "Status (Consumable Assets)",
+      "category": "Asset Management",
+      "what_it_does": "The Status of consumable assets helps in tracking the availability and condition of assets within the institution. It includes statuses like 'Available' (in stock and ready for use), 'Not Available' (out of stock or awaiting restocking), and 'Below Threshold' (quantity has fallen below the predefined re-order threshold, requiring replenishment).",
+      "why_it_matters": "Asset statuses provide real-time insights into inventory levels and conditions, enabling proactive management, timely replenishment, and efficient allocation of consumable resources to avoid operational disruptions.",
+      "how_to_use": [],
+      "examples": [
+        "A consumable asset showing 'Below Threshold' status triggers an alert for the asset administrator to place a new order."
+      ],
+      "keywords": [
+        "status consumable assets",
+        "availability",
+        "condition tracking",
+        "available status",
+        "not available status",
+        "below threshold status",
+        "in stock",
+        "out of stock",
+        "awaiting restocking",
+        "re-order threshold",
+        "replenishment",
+        "asset management",
+        "inventory status",
+        "consumable stock status",
+        "inventory condition"
+      ],
+      "synonyms": [
+        "consumable stock status",
+        "inventory condition"
+      ],
+      "user_questions": [
+        "What are the statuses for consumable assets?",
+        "What does 'Available' status mean for consumables?",
+        "What does 'Not Available' status mean?",
+        "When does a consumable asset show 'Below Threshold' status?",
+        "How do I track the availability of consumables?"
+      ],
+      "related_features": [
+        "consumable-asset",
+        "re-order-threshold"
+      ],
+      "tags": [
+        "asset management",
+        "consumables",
+        "inventory",
+        "status"
+      ]
+    },
+    {
+      "id": "allotment-rule-fefo",
+      "feature_name": "Allotment Rule FEFO (First Expired First Out)",
+      "category": "Asset Management",
+      "what_it_does": "This refers to a method for managing the distribution or allocation of consumable assets based on their expiry dates. Under this rule, the platform ensures that consumables with the earliest expiry dates are used or allocated first.",
+      "why_it_matters": "The First Expired First Out (FEFO) rule is critical for managing perishable or time-sensitive consumable assets, minimizing waste by ensuring older stock is used before it expires, and maintaining product freshness or efficacy.",
+      "how_to_use": [],
+      "examples": [
+        "When allocating medical supplies, the system automatically suggests batches with the nearest expiry dates first."
+      ],
+      "keywords": [
+        "allotment rule FEFO",
+        "First Expired First Out (FEFO)",
+        "distribution method",
+        "allocation method",
+        "consumable assets",
+        "expiry dates",
+        "earliest expiry first",
+        "waste minimization",
+        "perishable items",
+        "time-sensitive assets",
+        "inventory management",
+        "asset management",
+        "FEFO rule",
+        "expiry-based allocation"
+      ],
+      "synonyms": [
+        "FEFO method",
+        "expiry-based allocation",
+        "first to expire, first out"
+      ],
+      "user_questions": [
+        "What is the FEFO allotment rule?",
+        "How does 'First Expired First Out' work?",
+        "Why use FEFO for consumable assets?",
+        "How does the system allocate consumables with expiry dates?",
+        "What is the best way to manage expiring stock?"
+      ],
+      "related_features": [
+        "consumable-asset",
+        "expiry-date",
+        "batches",
+        "allot-expired-quantity"
+      ],
+      "tags": [
+        "asset management",
+        "consumables",
+        "inventory",
+        "rules",
+        "expiry"
+      ]
+    },
+    {
+      "id": "allot-expired-quantity",
+      "feature_name": "Allot Expired Quantity",
+      "category": "Asset Management",
+      "what_it_does": "This refers to the option that allows consumable assets from expired batches to be allocated or used, despite their expiration. This functionality is typically used in specific cases where expired items can still be utilized, such as in non-critical applications or when permitted by institutional policies.",
+      "why_it_matters": "This option provides flexibility for institutions to utilize expired consumables in specific, approved scenarios, potentially reducing waste in non-critical applications, but requires careful policy adherence to prevent misuse.",
+      "how_to_use": [],
+      "examples": [
+        "Using expired cleaning supplies for non-sensitive areas if institutional policy allows.",
+        "Allocating expired training materials that are still functionally relevant."
+      ],
+      "keywords": [
+        "allot expired quantity",
+        "use expired assets",
+        "allocate expired consumables",
+        "expired batches",
+        "non-critical applications",
+        "institutional policies",
+        "waste reduction",
+        "consumables",
+        "asset management",
+        "expired stock usage",
+        "allow expired allocation",
+        "use out-of-date stock"
+      ],
+      "synonyms": [
+        "allow expired allocation",
+        "use out-of-date stock"
+      ],
+      "user_questions": [
+        "Can I allot expired consumable assets?",
+        "When can expired consumables be used?",
+        "What does 'Allot Expired Quantity' mean?",
+        "Is it safe to use expired items?",
+        "How do I allocate items from expired batches?"
+      ],
+      "related_features": [
+        "consumable-asset",
+        "expiry-date",
+        "expired-quantity",
+        "allotment-rule-fefo"
+      ],
+      "tags": [
+        "asset management",
+        "consumables",
+        "inventory",
+        "expiry",
+        "policy"
+      ]
+    }
+  ]
+}
