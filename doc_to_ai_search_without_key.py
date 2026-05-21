@@ -39,9 +39,13 @@ from typing import Any
 
 # ----------------------------- config (edit here) -----------------------------
 
-INPUT_PATH = r"c:\Users\suraj\Downloads\My Python\Digii Other\Documentations"
-OUTPUT_DIR = r"c:\Users\suraj\Downloads\My Python\Digii Other\ai_docs_out"
+INPUT_PATH = r"C:\Users\suraj\AI-Search-Compatible-Doc\Documentations"
+OUTPUT_DIR = r"C:\Users\suraj\AI-Search-Compatible-Doc\ai_docs_out"
 MODULE_HINT: str | None = None
+
+# True  -> write both the structured .json and the rendered .md
+# False -> write only the rendered .md
+GENERATE_JSON = False
 
 CLAUDE_MODEL = "sonnet"           # alias; CLI resolves to latest Sonnet
 CLI_TIMEOUT_SEC = 600
@@ -306,13 +310,18 @@ def process_one(
         )
 
         base = src.stem.replace(" ", "_")
-        json_path = out_dir / f"{base}.json"
         md_path = out_dir / f"{base}.md"
-
-        json_path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
         md_path.write_text(render_markdown(data), encoding="utf-8")
+
+        if GENERATE_JSON:
+            json_path = out_dir / f"{base}.json"
+            json_path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+            written = f"{json_path.name} + {md_path.name}"
+        else:
+            written = md_path.name
+
         n_chunks = len(data.get("chunks", []))
-        _log(f"   ok  {src.name}  ->  {json_path.name} + {md_path.name}  ({n_chunks} chunks)")
+        _log(f"   ok  {src.name}  ->  {written}  ({n_chunks} chunks)")
         return (src, True, "")
     except Exception as e:
         _log(f"   FAIL {src.name}: {e}", err=True)
