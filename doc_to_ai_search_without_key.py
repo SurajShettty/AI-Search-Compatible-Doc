@@ -279,6 +279,15 @@ def render_markdown(data: dict[str, Any]) -> str:
 
 # ----------------------------- IO -----------------------------
 
+_FILENAME_BAD = re.compile(r'[<>:"/\\|?*\x00-\x1f]+')
+
+
+def _sanitize_for_filename(s: str) -> str:
+    s = _FILENAME_BAD.sub("", s).strip()
+    s = re.sub(r"\s+", "_", s)
+    return s.strip("._")
+
+
 def gather_inputs(input_path: Path) -> list[Path]:
     if input_path.is_file():
         return [input_path]
@@ -297,12 +306,14 @@ def _log(msg: str, *, err: bool = False) -> None:
 
 def process_one(
     src: Path,
+    input_root: Path,
     out_dir: Path,
     claude_path: str,
     sys_prompt_file: str,
     module_hint: str | None,
 ) -> tuple[Path, bool, str]:
-    _log(f"-> {src.name}")
+    rel = src.relative_to(input_root)
+    _log(f"-> {rel.as_posix()}")
     try:
         raw = clean_text(src.read_text(encoding="utf-8", errors="replace"))
         data = transform_with_claude_cli(
@@ -310,21 +321,27 @@ def process_one(
         )
 
         base = src.stem.replace(" ", "_")
-        md_path = out_dir / f"{base}.md"
+        folder = _sanitize_for_filename(src.parent.name)
+        stem = f"{folder}__{base}" if folder else base
+
+        target_dir = out_dir / rel.parent
+        target_dir.mkdir(parents=True, exist_ok=True)
+
+        md_path = target_dir / f"{stem}.md"
         md_path.write_text(render_markdown(data), encoding="utf-8")
 
         if GENERATE_JSON:
-            json_path = out_dir / f"{base}.json"
+            json_path = target_dir / f"{stem}.json"
             json_path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
-            written = f"{json_path.name} + {md_path.name}"
+            written = f"{json_path.relative_to(out_dir).as_posix()} + {md_path.relative_to(out_dir).as_posix()}"
         else:
-            written = md_path.name
+            written = md_path.relative_to(out_dir).as_posix()
 
         n_chunks = len(data.get("chunks", []))
-        _log(f"   ok  {src.name}  ->  {written}  ({n_chunks} chunks)")
+        _log(f"   ok  {rel.as_posix()}  ->  {written}  ({n_chunks} chunks)")
         return (src, True, "")
     except Exception as e:
-        _log(f"   FAIL {src.name}: {e}", err=True)
+        _log(f"   FAIL {rel.as_posix()}: {e}", err=True)
         return (src, False, str(e))
 
 
@@ -344,6 +361,10 @@ def main() -> int:
         print(f"No .md files found under {in_path}", file=sys.stderr)
         return 1
 
+    # When INPUT_PATH is a single file, mirror from its parent so output
+    # is placed flat in OUTPUT_DIR. When it's a directory, mirror from it.
+    input_root = in_path if in_path.is_dir() else in_path.parent
+
     # write SYSTEM_PROMPT to a temp file once and reuse across calls
     fd, sys_prompt_file = tempfile.mkstemp(prefix="digii_sys_", suffix=".txt", text=True)
     try:
@@ -359,7 +380,7 @@ def main() -> int:
         with ThreadPoolExecutor(max_workers=workers) as pool:
             futures = [
                 pool.submit(
-                    process_one, f, out_dir, claude_path, sys_prompt_file, MODULE_HINT
+                    process_one, f, input_root, out_dir, claude_path, sys_prompt_file, MODULE_HINT
                 )
                 for f in files
             ]
