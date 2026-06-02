@@ -16,17 +16,19 @@ Env vars:
 """
 
 import json
+from dotenv import load_dotenv
 import os
 import sys
 
 import requests
+load_dotenv() 
 
 TOKEN = os.getenv("OUTLINE_API_TOKEN", "")
 BASE_URL = os.getenv("OUTLINE_BASE_URL", "https://app.getoutline.com/api").rstrip("/")
 # NOTE: Outline's API requires full collection UUIDs, not the short URL IDs
 # shown in the browser (e.g. "TfgiqQsTzQ"). Use collections.list to find them.
-SOURCE_COLLECTION_IDS = [c.strip() for c in os.getenv("SOURCE_COLLECTION_IDS", "046cc88e-b8cc-44cb-a670-75ab40030e6f").split(",") if c.strip()]
-TARGET_COLLECTION_ID = os.getenv("TARGET_COLLECTION_ID", "83fe623e-b90c-4ae2-9760-873f3162aecc")
+SOURCE_COLLECTION_IDS = [c.strip() for c in os.getenv("SOURCE_COLLECTION_IDS", "").split(",") if c.strip()]
+TARGET_COLLECTION_ID = os.getenv("TARGET_COLLECTION_ID", "")
 TITLE_PREFIX = os.getenv("TITLE_PREFIX", "[AI] ").strip()
 STATE_FILE = os.getenv("STATE_FILE", "outline_sync_state.json")
 
