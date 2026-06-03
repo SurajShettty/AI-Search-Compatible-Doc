@@ -11,7 +11,6 @@ Env vars:
   OUTLINE_BASE_URL        default: https://app.getoutline.com/api
   SOURCE_COLLECTION_IDS   comma-separated
   TARGET_COLLECTION_ID
-  TITLE_PREFIX            default: [AI]
   STATE_FILE              default: outline_sync_state.json
 """
 
@@ -29,7 +28,6 @@ BASE_URL = os.getenv("OUTLINE_BASE_URL", "https://app.getoutline.com/api").rstri
 # shown in the browser (e.g. "TfgiqQsTzQ"). Use collections.list to find them.
 SOURCE_COLLECTION_IDS = [c.strip() for c in os.getenv("SOURCE_COLLECTION_IDS", "").split(",") if c.strip()]
 TARGET_COLLECTION_ID = os.getenv("TARGET_COLLECTION_ID", "")
-TITLE_PREFIX = os.getenv("TITLE_PREFIX", "[AI] ").strip()
 STATE_FILE = os.getenv("STATE_FILE", "outline_sync_state.json")
 
 
@@ -68,12 +66,6 @@ def list_all_docs(collection_id):
     return docs
 
 
-def strip_prefix(title):
-    if title.startswith(TITLE_PREFIX):
-        return title[len(TITLE_PREFIX):].strip()
-    return title.strip()
-
-
 def main():
     if not TOKEN or not TARGET_COLLECTION_ID or not SOURCE_COLLECTION_IDS:
         print("ERROR: Set OUTLINE_API_TOKEN, SOURCE_COLLECTION_IDS, TARGET_COLLECTION_ID", file=sys.stderr)
@@ -89,85 +81,61 @@ def main():
     target_docs = list_all_docs(TARGET_COLLECTION_ID)
     print(f"    Found {len(target_docs)} target doc(s)")
 
-    # Build lookups
-    source_by_title = {}
+    # Build child indexes for both trees (parent_id -> [doc_ids]; None = root).
+    source_children = {}
     for sid, d in source_docs.items():
-        t = d.get("title", "").strip()
-        if t:
-            source_by_title.setdefault(t, []).append(sid)
-
-    source_children = {}  # parent_id -> [child_ids]
-    for sid, d in source_docs.items():
-        pid = d.get("parentDocumentId")
-        if pid:
-            source_children.setdefault(pid, []).append(sid)
-
-    # First pass: match by title
-    mapping = {}  # source_id -> target_id
-    unmatched_target = []
-
+        source_children.setdefault(d.get("parentDocumentId"), []).append(sid)
+    target_children = {}
     for tid, d in target_docs.items():
-        clean = strip_prefix(d.get("title", ""))
-        candidates = source_by_title.get(clean, [])
-        if len(candidates) == 1:
-            mapping[candidates[0]] = tid
-        else:
-            unmatched_target.append({
-                "target_id": tid,
-                "target_title": d.get("title", ""),
-                "clean_title": clean,
-                "target_parent_id": d.get("parentDocumentId"),
-                "reason": f"AMBIGUOUS ({len(candidates)} matches)" if len(candidates) > 1 else "NO MATCH",
-            })
+        target_children.setdefault(d.get("parentDocumentId"), []).append(tid)
 
-    title_matched = len(mapping)
-    print(f"    Title-matched: {title_matched}")
+    def core_title(target_title, source_parent_title):
+        """Target titles may carry a '<parent> - ' prefix added by outline_sync.
+        Strip it so we compare against the source doc's bare title."""
+        t = (target_title or "").strip()
+        if source_parent_title:
+            prefix = f"{source_parent_title} - "
+            if t.startswith(prefix):
+                return t[len(prefix):].strip()
+        return t
 
-    # Second pass: analyze unmatched by parent structure
-    auto_guesses = []
-    manual_needed = []
+    def by_created(docs, ids):
+        # Stable order so duplicate-named siblings align deterministically.
+        return sorted(ids, key=lambda i: docs[i].get("createdAt", ""))
 
-    # Reverse mapping for quick parent lookup
-    target_to_source = {v: k for k, v in mapping.items()}
+    # Top-down tree alignment by exact name. A level's children are matched only
+    # after their parent is matched, so identical names under different parents
+    # (e.g. each module's 'FAQs') are disambiguated by position. An optional
+    # '<parent> - ' prefix is stripped from both sides, so it works whether titles
+    # are bare or 'parent - child'. (Assumes target titles match the source after
+    # the manual rename; anything still unmatched is reported below.)
+    mapping = {}                # source_id -> target_id
+    matched_targets = set()
 
-    for u in unmatched_target:
-        t_parent = u["target_parent_id"]
-        source_parent_id = target_to_source.get(t_parent)
+    queue = [(None, None)]      # (matched source parent, matched target parent); roots first
+    while queue:
+        s_par, t_par = queue.pop()
+        s_par_title = source_docs.get(s_par, {}).get("title", "").strip() if s_par else ""
+        s_kids = by_created(source_docs, source_children.get(s_par, []))
+        t_kids = by_created(target_docs, target_children.get(t_par, []))
 
-        if source_parent_id:
-            children = source_children.get(source_parent_id, [])
-            parent_title = source_docs.get(source_parent_id, {}).get("title", "???")
+        for sid in s_kids:
+            s_core = core_title(source_docs[sid].get("title", "").strip(), s_par_title)
+            found = None
+            for tid in t_kids:
+                if tid in matched_targets:
+                    continue
+                if core_title(target_docs[tid].get("title", ""), s_par_title) == s_core:
+                    found = tid
+                    break
+            if found is not None:
+                mapping[sid] = found
+                matched_targets.add(found)
+                queue.append((sid, found))     # descend into the matched pair
 
-            if len(children) == 1:
-                # Only one source child — safe guess
-                cid = children[0]
-                mapping[cid] = u["target_id"]
-                auto_guesses.append({
-                    "source_id": cid,
-                    "source_title": source_docs[cid]["title"],
-                    "target_id": u["target_id"],
-                    "target_title": u["target_title"],
-                    "parent": parent_title,
-                })
-            else:
-                manual_needed.append({
-                    "target_id": u["target_id"],
-                    "target_title": u["target_title"],
-                    "parent_title": parent_title,
-                    "parent_source_id": source_parent_id,
-                    "candidates": [
-                        {"id": cid, "title": source_docs[cid]["title"]}
-                        for cid in children
-                    ],
-                })
-        else:
-            manual_needed.append({
-                "target_id": u["target_id"],
-                "target_title": u["target_title"],
-                "parent_title": "(unmapped or root)",
-                "parent_source_id": None,
-                "candidates": [],
-            })
+    matched_n = len(mapping)
+    orphan_targets = [d for tid, d in target_docs.items() if tid not in matched_targets]
+    unmatched_source = [sid for sid in source_docs if sid not in mapping]
 
     # Write state
     state = {
@@ -180,36 +148,25 @@ def main():
     # Report
     print(f"\n{'='*60}")
     print(f"[*] STATE WRITTEN: {STATE_FILE}")
-    print(f"    Title-matched parents : {title_matched}")
-    print(f"    Auto-guessed children : {len(auto_guesses)}")
-    print(f"    Manual map needed     : {len(manual_needed)}")
+    print(f"    Matched docs           : {matched_n}")
+    print(f"    Source unmatched (NEW) : {len(unmatched_source)}")
+    print(f"    Orphan target docs     : {len(orphan_targets)}")
 
-    if auto_guesses:
-        print(f"\n[+] AUTO-GUESSED (review & confirm):")
-        for g in auto_guesses:
-            print(f"    '{g['source_title']}'  ->  '{g['target_title']}'  (under: {g['parent']})")
-
-    if manual_needed:
-        print(f"\n[!] MANUAL MAPPING NEEDED — copy the correct lines below into {STATE_FILE}:")
-        print(f"    Under the \"id_mapping\" object, add:")
-        for m in manual_needed:
-            print(f"\n    # Target: '{m['target_title']}'  (parent: {m['parent_title']})")
-            if m["candidates"]:
-                for c in m["candidates"]:
-                    print(f'    "{c["id"]}": "{m["target_id"]}",  # {c["title"]}')
-            else:
-                print(f'    # No candidates. Find the source doc manually.')
-                print(f'    "SOURCE-UUID-HERE": "{m["target_id"]}",')
-
-    unmatched_source = [sid for sid in source_docs if sid not in mapping]
     if unmatched_source:
-        print(f"\n[*] {len(unmatched_source)} source doc(s) will be treated as NEW on next run:")
-        for sid in unmatched_source[:10]:
-            print(f"    - '{source_docs[sid]['title']}' ({sid})")
-        if len(unmatched_source) > 10:
-            print(f"    ... and {len(unmatched_source) - 10} more")
+        print(f"\n[!] {len(unmatched_source)} source doc(s) have NO matching target title.")
+        print(f"    Rename the target doc to match (or they'll be created as NEW on sync):")
+        for sid in unmatched_source[:30]:
+            d = source_docs[sid]
+            par = source_docs.get(d.get("parentDocumentId"), {}).get("title", "(root)")
+            print(f"    - '{d['title']}'  (under: {par})")
+        if len(unmatched_source) > 30:
+            print(f"    ... and {len(unmatched_source) - 30} more")
 
-    print(f"\n[*] After editing {STATE_FILE}, run: python outline_sync_new.py")
+    if orphan_targets:
+        print(f"\n[*] {len(orphan_targets)} target doc(s) matched no source (extra in target, left alone).")
+
+    print(f"\n[*] Goal: rename target docs until 'unmatched' reaches 0, then run:")
+    print(f"    python outline_sync_new.py")
 
 
 if __name__ == "__main__":

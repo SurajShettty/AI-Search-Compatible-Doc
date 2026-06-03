@@ -15,7 +15,6 @@ Env vars:
   OUTLINE_BASE_URL        default: https://app.getoutline.com/api
   CLAUDE_CLI_PATH         default: claude
   STATE_FILE              default: outline_sync_state.json
-  TITLE_PREFIX            default: [AI]
   DRY_RUN                 default: false
 """
 
@@ -44,7 +43,6 @@ BASE_URL = os.getenv("OUTLINE_BASE_URL", "https://app.getoutline.com/api").rstri
 CLAUDE_CLI = os.getenv("CLAUDE_CLI_PATH", "claude")
 STATE_FILE = Path(os.getenv("STATE_FILE", "outline_sync_state.json"))
 DRY_RUN = os.getenv("DRY_RUN", "false").lower() == "true"
-TITLE_PREFIX = os.getenv("TITLE_PREFIX", "[AI] ")
 
 CLAUDE_TIMEOUT = 600
 CLAUDE_RETRIES = 2
@@ -435,9 +433,17 @@ def process_source_document(
         print("    [3/3] Resolving parent in target...")
         target_parent_id = resolve_target_parent(client, source_parent_id, state)
 
+        # Output title: "<parent folder> - <file name>" (falls back to bare
+        # title for root-level docs with no parent).
+        if source_parent_id:
+            parent_title = get_document_info(client, source_parent_id).get("title", "").strip()
+            output_title = f"{parent_title} - {title}" if parent_title else title
+        else:
+            output_title = title
+
         # 4. Create in target collection
         payload = {
-            "title": f"{TITLE_PREFIX}{title}",
+            "title": output_title,
             "text": processed_md,
             "collectionId": TARGET_COLLECTION_ID,
             "publish": True,
