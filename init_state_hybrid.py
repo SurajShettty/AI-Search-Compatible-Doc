@@ -137,10 +137,15 @@ def main():
     orphan_targets = [d for tid, d in target_docs.items() if tid not in matched_targets]
     unmatched_source = [sid for sid in source_docs if sid not in mapping]
 
-    # Write state
+    # Write state. Seed source_updated_at from the live updatedAt of each matched
+    # source doc so outline_sync_new.py has a baseline immediately and can detect
+    # changes on the very next run (instead of spending a run just to backfill).
     state = {
         "seen_source_ids": list(mapping.keys()),
         "id_mapping": mapping,
+        "source_updated_at": {
+            sid: source_docs[sid].get("updatedAt", "") for sid in mapping
+        },
     }
     with open(STATE_FILE, "w", encoding="utf-8") as f:
         json.dump(state, f, indent=2, ensure_ascii=False)

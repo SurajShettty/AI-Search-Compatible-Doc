@@ -138,8 +138,9 @@ def load_state() -> dict:
         data = json.loads(STATE_FILE.read_text(encoding="utf-8"))
         data.setdefault("seen_source_ids", [])
         data.setdefault("id_mapping", {})
+        data.setdefault("source_updated_at", {})
         return data
-    return {"seen_source_ids": [], "id_mapping": {}}
+    return {"seen_source_ids": [], "id_mapping": {}, "source_updated_at": {}}
 
 
 def save_state(state: dict) -> None:
@@ -408,6 +409,7 @@ def process_source_document(
         info = get_document_info(client, source_doc_id)
         title = info.get("title", "Untitled")
         source_parent_id = info.get("parentDocumentId")
+        updated_at = info.get("updatedAt", "")
 
         print(f"\n=== {title} ({source_doc_id}) ===")
 
@@ -416,6 +418,7 @@ def process_source_document(
             state["seen_source_ids"].append(source_doc_id)
             fake_id = f"dry-run-{source_doc_id}"
             state["id_mapping"][source_doc_id] = fake_id
+            state["source_updated_at"][source_doc_id] = updated_at
             save_state(state)
             return fake_id
 
@@ -433,13 +436,8 @@ def process_source_document(
         print("    [3/3] Resolving parent in target...")
         target_parent_id = resolve_target_parent(client, source_parent_id, state)
 
-        # Output title: "<parent folder> - <file name>" (falls back to bare
-        # title for root-level docs with no parent).
-        if source_parent_id:
-            parent_title = get_document_info(client, source_parent_id).get("title", "").strip()
-            output_title = f"{parent_title} - {title}" if parent_title else title
-        else:
-            output_title = title
+        # Output title mirrors the source document title exactly.
+        output_title = title
 
         # 4. Create in target collection
         payload = {
@@ -459,6 +457,7 @@ def process_source_document(
         # 5. Record
         state["seen_source_ids"].append(source_doc_id)
         state["id_mapping"][source_doc_id] = target_id
+        state["source_updated_at"][source_doc_id] = updated_at
         save_state(state)
 
         return target_id
@@ -468,6 +467,73 @@ def process_source_document(
         return None
     finally:
         _processing_stack.discard(source_doc_id)
+
+
+def update_source_document(
+    client: OutlineClient,
+    source_doc_id: str,
+    state: dict,
+) -> str | None:
+    """
+    Re-export -> AI-transform -> update the existing target document in place.
+    Used when a source doc changed after it was last synced.
+    Returns the target document ID on success.
+    """
+    target_id = state["id_mapping"].get(source_doc_id)
+    if not target_id:
+        # No mapping (e.g. created before mapping was tracked) — treat as new.
+        print(f"    [warn] {source_doc_id} changed but has no target mapping. Creating fresh.", file=sys.stderr)
+        if source_doc_id in state["seen_source_ids"]:
+            state["seen_source_ids"].remove(source_doc_id)
+        return process_source_document(client, source_doc_id, state)
+
+    try:
+        info = get_document_info(client, source_doc_id)
+        title = info.get("title", "Untitled")
+        updated_at = info.get("updatedAt", "")
+
+        print(f"\n=== [UPDATED] {title} ({source_doc_id}) ===")
+
+        if DRY_RUN:
+            print("    [DRY-RUN] Would re-export, transform, and update target in place.")
+            state["source_updated_at"][source_doc_id] = updated_at
+            save_state(state)
+            return target_id
+
+        # 1. Export
+        print("    [1/3] Re-exporting...")
+        raw_md = get_document_text(client, source_doc_id)
+        print(f"        -> {len(raw_md)} chars")
+
+        # 2. AI Transform
+        print("    [2/3] AI transforming...")
+        processed_md = transform_document(title, raw_md)
+        print(f"        -> {len(processed_md)} chars")
+
+        # 3. Output title mirrors the source document title exactly.
+        output_title = title
+
+        # 4. Update existing target document in place
+        print("    [3/3] Updating target document...")
+        payload = {
+            "id": target_id,
+            "title": output_title,
+            "text": processed_md,
+            "publish": True,
+        }
+        resp = client.post("documents.update", payload)
+        target_url = resp.get("data", {}).get("url", "N/A")
+        print(f"        -> Updated: {target_url} (id: {target_id})")
+
+        # 5. Record new timestamp
+        state["source_updated_at"][source_doc_id] = updated_at
+        save_state(state)
+
+        return target_id
+
+    except Exception as e:
+        print(f"    [ERROR] {e}", file=sys.stderr)
+        return None
 
 
 # ----------------------------- MAIN -----------------------------"
@@ -497,11 +563,30 @@ def main() -> int:
     # Determine truly new documents
     new_ids = [sid for sid in all_source if sid not in state["seen_source_ids"]]
 
-    if not new_ids:
-        print("[*] No new documents found. Nothing to do.")
+    # Determine documents that changed since last sync.
+    # Compare the live updatedAt (from documents.list) against the stored value.
+    updated_ids = []
+    backfilled = False
+    for sid in all_source:
+        if sid in new_ids:
+            continue
+        live_updated = all_source[sid].get("updatedAt", "")
+        stored_updated = state["source_updated_at"].get(sid)
+        if stored_updated is None:
+            # Synced before we tracked timestamps — backfill without re-generating.
+            state["source_updated_at"][sid] = live_updated
+            backfilled = True
+            continue
+        if live_updated and live_updated != stored_updated:
+            updated_ids.append(sid)
+    if backfilled:
+        save_state(state)  # persist backfilled timestamps so future runs can detect changes
+
+    if not new_ids and not updated_ids:
+        print("[*] No new or changed documents found. Nothing to do.")
         return 0
 
-    print(f"[+] Found {len(new_ids)} new document(s) to process\n")
+    print(f"[+] Found {len(new_ids)} new and {len(updated_ids)} changed document(s) to process\n")
 
     success = 0
     failed = 0
@@ -512,11 +597,18 @@ def main() -> int:
         else:
             failed += 1
 
+    for sid in updated_ids:
+        result = update_source_document(client, sid, state)
+        if result:
+            success += 1
+        else:
+            failed += 1
+
     print(f"\n{'='*60}")
     print(f"[*] Done.")
-    print(f"    Created : {success}")
-    print(f"    Failed  : {failed}")
-    print(f"    Skipped : {len(all_source) - len(new_ids)} (already in state)")
+    print(f"    Created/Updated : {success}")
+    print(f"    Failed          : {failed}")
+    print(f"    Unchanged       : {len(all_source) - len(new_ids) - len(updated_ids)}")
     return 0 if failed == 0 else 1
 
 
