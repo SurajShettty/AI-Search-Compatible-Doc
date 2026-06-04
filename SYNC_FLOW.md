@@ -2,6 +2,58 @@
 
 This document explains how the two scripts work, end to end.
 
+## Prerequisites
+
+Before running either script, make sure all of the following are in place.
+
+### 1. Software
+
+| Requirement   | Notes                                                                 |
+| ------------- | --------------------------------------------------------------------- |
+| **Python 3.9+** | The scripts use modern typing (`from __future__ import annotations`). |
+| **Claude CLI**  | The `claude` command must be installed and on your `PATH` (or point to it with `CLAUDE_CLI_PATH`). Used by `outline_sync_new.py` for the AI transform. |
+| **Python packages** | Install with: `pip install requests python-dotenv`                |
+
+### 2. Outline access
+
+- An **Outline API token** with read access to the source collection(s) and
+  read/write access to the target collection.
+- The **full collection UUIDs** (not the short URL IDs) for both source and
+  target collections.
+
+### 3. `.env` file
+
+Create a `.env` file in the project root. **Required** variables:
+
+```bash
+# Outline API token (read source, read/write target)
+OUTLINE_API_TOKEN=your-token-here
+
+# Full collection UUIDs (comma-separate multiple sources)
+SOURCE_COLLECTION_IDS=046cc88e-b8cc-44cb-a670-75ab40030e6f
+TARGET_COLLECTION_ID=83fe623e-b90c-4ae2-9760-873f3162aecc
+```
+
+**Optional** variables (defaults shown):
+
+| Variable           | Default                          | Purpose                                      |
+| ------------------ | -------------------------------- | -------------------------------------------- |
+| `OUTLINE_BASE_URL` | `https://app.getoutline.com/api` | Override for self-hosted Outline instances.  |
+| `CLAUDE_CLI_PATH`  | `claude`                         | Explicit path to the Claude CLI binary.      |
+| `STATE_FILE`       | `outline_sync_state.json`        | Path to the sync state file.                 |
+| `DRY_RUN`          | `false`                          | Set `true` to preview without writing.       |
+
+> ⚠️ The `.env` file holds your API token — keep it out of version control
+> (it's already in `.gitignore`).
+
+### 4. First-run order
+
+Run `init_state_hybrid.py` **once** before the first `outline_sync_new.py` run to
+seed `outline_sync_state.json` from docs that already exist in both collections.
+See the two script sections below for details.
+
+---
+
 ## The Big Picture
 
 You have two Outline collections:
